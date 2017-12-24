@@ -11,7 +11,11 @@
 |
 */
 
-Route::get('{locale}/', function ($locale) {
+Route::get('{locale}/get-started', function ($locale) {
     App::setLocale($locale);
-    return view('welcome');
+    return view('get-started');
 });
+
+Route::get('{locale}/welcome', 'HomeController@index');
+Route::get('/get-started/get-info', 'GetStartedController@get_info');
+Route::get('{locale}/admin/listings', 'GetStartedController@listing');
