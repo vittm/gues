@@ -19,3 +19,4 @@ Route::get('{locale}/get-started', function ($locale) {
 Route::get('{locale}/welcome', 'HomeController@index');
 Route::get('/get-started/get-info', 'GetStartedController@get_info');
 Route::get('{locale}/admin/listings', 'GetStartedController@listing');
+Route::get('/calculator-{block}-{decoration}-{bedrooms}-{email}', 'HomeController@calculator');

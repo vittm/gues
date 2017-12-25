@@ -226,7 +226,26 @@
     </div>
   </div>
 </div>
-
+<script>
+        $('.calculate_clicks').click(function(e){
+            var block = $('#price_calculator_block').val(),
+                decoration = $('#calculator_decoration').val(),
+                bedrooms = $('#price_calculator_bedrooms_count').val(),
+                email = $('#price_calculator_email').val();
+            e.preventDefault();
+            $.ajax({
+                url: "{{ url('/calculator') }}-"+block+"-"+decoration+"-"+bedrooms+"-"+email+"",
+                type: "POST",
+                cache: false,
+                data: {'block':block,'decoration':decoration,'bedrooms':bedrooms,'email':email,"_token": "{{ csrf_token() }}"},
+                dataType:"html",
+                success: function(val){
+                    console.log(val);
+                  }
+                });
+            return false;
+        });
+      </script>
 </body>
 
 </html>

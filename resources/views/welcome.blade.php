@@ -16,10 +16,10 @@
   <form novalidate="novalidate" class="simple_form new_price_calculator" id="new_price_calculator" 
     accept-charset="UTF-8" data-remote="true" method="post">
     <div class="form-group email required price_calculator_email price_calculator_email--padding">
-    <select class="string required form-control price_calculator_type" name="price_calculator_email_type  " id="">
-    @foreach($types as $key => $value)
-      <option value="$value->id">{{ $value->type }}</option>
-    @endforeach
+    <select class="string required form-control price_calculator_type " name="price_calculator_email_type " id="price_calculator_block">
+      @foreach($types as $key => $value)
+        <option value="{{$value->id}}">{{ $value->type }}</option>
+      @endforeach
     </select>   
   </div>  
 
@@ -39,33 +39,12 @@
         <input class="string email required form-control" placeholder="{{ __('welcome.input_email')}}" type="email" name="price_calculator_email" id="price_calculator_email" /></div></div>
       
         <div class="form-group email required price_calculator_email price_calculator_email--padding">
-          <select class="string required form-control price_calculator_type" name="price_calculator_email_type" id="">
+          <select class="string required form-control price_calculator_type" name="price_calculator_email_type" id="calculator_decoration">
             <option value="decoration">Phòng trống</option>
             <option value="notdecoration">Phòng không trống</option>
           </select>   
         </div>
       <input type="submit" name="commit" value="{{ __('welcome.btn_calculate')}}" class="btn btn-primary calculate_clicks" />
-      <script>
-        $('.calculate_clicks').click(function(){
-            var bed = $('#price_calculator_bedrooms_count').val(),
-                type = $('.price_calculator_type').val(),
-                bedrooms = $('#price_calculator_bedrooms_count').val(),
-                email = $('#price_calculator_email').val(),
-                id = $('.voucher').val();
-            e.preventDefault();
-            $.ajax({
-                url: "{{ url('/calulator') }}",
-                type: "POST",
-                cache: false,
-                data: {'id':id,"_token": "{{ csrf_token() }}"},
-                dataType:"html",
-                success: function(val){
-                    console.log(val);
-                  }
-                });
-            return false;
-        });
-      </script>
 </form></div>
 
         <p class="jumbotron-info">
