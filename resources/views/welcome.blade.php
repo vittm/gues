@@ -13,12 +13,13 @@
 
         <div class='price-calculator inline'>
   <h2 class='h3 header'><img src="{{ url('assets/wallet_icon-6937ad45a2530a6d973ea5a696d1ab19770533e8928ad628fe5614fe45bb43d0.png')}}" alt="Wallet icon" />{{ __('welcome.txt_find_out')}}</h2>
-  <form novalidate="novalidate" class="simple_form new_price_calculator" id="new_price_calculator" action="/en-sg/price_calculator/?landing=true&amp;wrapper=inline" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" />
-
-  <div class="form-group email required price_calculator_email price_calculator_email--padding">
+  <form novalidate="novalidate" class="simple_form new_price_calculator" id="new_price_calculator" 
+    accept-charset="UTF-8" data-remote="true" method="post">
+    <div class="form-group email required price_calculator_email price_calculator_email--padding">
     <select class="string required form-control price_calculator_type" name="price_calculator_email_type  " id="">
-      <option value="null">Phòng trống</option>
-      <option value="notnull">Phòng không trống</option>
+    @foreach($types as $key => $value)
+      <option value="$value->id">{{ $value->type }}</option>
+    @endforeach
     </select>   
   </div>  
 
@@ -38,13 +39,33 @@
         <input class="string email required form-control" placeholder="{{ __('welcome.input_email')}}" type="email" name="price_calculator_email" id="price_calculator_email" /></div></div>
       
         <div class="form-group email required price_calculator_email price_calculator_email--padding">
-          <select class="string required form-control price_calculator_type" name="price_calculator_email_type  " id="">
-            <option value="null">Phòng trống</option>
-            <option value="notnull">Phòng không trống</option>
+          <select class="string required form-control price_calculator_type" name="price_calculator_email_type" id="">
+            <option value="decoration">Phòng trống</option>
+            <option value="notdecoration">Phòng không trống</option>
           </select>   
         </div>
-
-      <input type="submit" name="commit" value="{{ __('welcome.btn_calculate')}}" data-disable-with="Calculating" data-disable-with="Calculating" class="btn btn-primary" />
+      <input type="submit" name="commit" value="{{ __('welcome.btn_calculate')}}" class="btn btn-primary calculate_clicks" />
+      <script>
+        $('.calculate_clicks').click(function(){
+            var bed = $('#price_calculator_bedrooms_count').val(),
+                type = $('.price_calculator_type').val(),
+                bedrooms = $('#price_calculator_bedrooms_count').val(),
+                email = $('#price_calculator_email').val(),
+                id = $('.voucher').val();
+            e.preventDefault();
+            $.ajax({
+                url: "{{ url('/calulator') }}",
+                type: "POST",
+                cache: false,
+                data: {'id':id,"_token": "{{ csrf_token() }}"},
+                dataType:"html",
+                success: function(val){
+                    console.log(val);
+                  }
+                });
+            return false;
+        });
+      </script>
 </form></div>
 
         <p class="jumbotron-info">
@@ -58,8 +79,77 @@
 
     </div>
   </div>
+<!-- form hidden -->
+  <div class="container price-calculator-result">
+  <div class="wrapper">
+    <img class="img-responsive" src="{{ url('/assets/price-ok-54a523249c5ffc2a56ec568e579e5ed019a6b3869b067bec054c48df19da19ea.png')}}" alt="Price ok">
+    <div class="content">
+      <div class="header">
+        <div>Nice! You could earn   <b class="price">£829</b>
+ per   <div class="dropdown">
+    <a data-toggle="dropdown" id="price_period" class="dropdown-toggle" href="#">
+      <span class="period">week</span>
+      <span class="caret"></span>
+</a>    <ul class="dropdown-menu" aria-labelledby="price_period">
+      <li>
+        <a data-price="£148" href="#">day</a>
+      </li>
+      <li>
+        <a data-price="£829" href="#">week</a>
+      </li>
+      <li>
+        <a data-price="£3,553" href="#">month</a>
+      </li>
+    </ul>
+  </div>
+</div> renting on short-let services like Airbnb.
+      </div>
+      <p class="note">approximate based on average earnings</p>
+    </div>
+  </div>
+</div>
+<div class="price-calculator-help">
+  <div class="container">
+    <h3>We can help.</h3>
+<div>GuestReady provides Airbnb management services to take the hassle out of hosting.</div>
+<div>We manage your space, welcome guests and keep it clean, while helping you increase your rental income.</div>
+<br>
+<div>Want to know more? Find out about our <a href="/management">Airbnb property management services</a> or leave your phone number below for an introduction.</div>
 
+    <form novalidate="novalidate" class="simple_form new_price_calculator_call" id="new_price_calculator_call" action="/en-uk/price_calculator_call/" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="✓">
+    <div class="form-group hidden price_calculator_call_log"><input class="form-control hidden" type="hidden" value="2743" name="price_calculator_call[price_calculator_log_id]" id="price_calculator_call_price_calculator_log_id"></div>    <div class="row">
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+        <div class="form-group string required price_calculator_call_full_name"><label class="control-label string required" for="price_calculator_call_full_name"><abbr title="required"></abbr> Full Name</label><input class="form-control string required" type="text" name="price_calculator_call[full_name]" id="price_calculator_call_full_name"></div>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+        <div class="form-group email required price_calculator_call_email"><label class="control-label email required" for="price_calculator_call_email"><abbr title="required"></abbr> Email</label><input class="form-control string email required" type="email" value="kanbi1995@gmail.com" name="price_calculator_call[email]" id="price_calculator_call_email"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+        <div class="form-group select required price_calculator_call_preference"><label class="control-label select required" for="price_calculator_call_preference"><abbr title="required"></abbr> Call Me</label><select class="form-control select required" name="price_calculator_call[preference]" id="price_calculator_call_preference"><option selected="selected" value="asap">asap</option>
+<option value="morning">morning</option>
+<option value="afternoon">afternoon</option>
+<option value="evening">evening</option></select></div>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+        <div class="form-group tel required price_calculator_call_phone"><label class="control-label tel required" for="price_calculator_call_phone"><abbr title="required"></abbr> Phone Number</label><input class="form-control string tel required" type="tel" name="price_calculator_call[phone]" id="price_calculator_call_phone"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-sm-offset-4 col-sm-4">
+        <button name="button" type="submit" data-disable-with="Processing...
+" class="btn btn-primary"><i class="fa fa-phone" aria-hidden="true"></i> Call me
+</button>
+      </div>
+    </div>
+</form>
+    <p>In this call we'll discuss the potential of your property on websites like Airbnb, and how GuestReady’s premium Airbnb management service can help you increase your rental income. We will ask you some questions to get to know your property a little better, and set up a meeting to get your listing up and running.</p>
 
+  </div>
+</div>
+
+<!-- form hidden -->
   <section class="stat-section media-coverage">
     <div class="bg-stat"></div>
     <div class="container text-center">

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 use App\Datas;
+use App\Rooms;
 
 class HomeController extends Controller
 {
@@ -25,7 +26,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-
-        return view('welcome',['type'=>$type]);
+        $types = DB::table('datas')->get();
+        return view('welcome',['types'=>$types]);
     }
 }
