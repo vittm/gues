@@ -6,12 +6,12 @@
     <div class="panel panel-default">
       <div class="panel-body">
         <div class="col-md-12">
-          <h2 class="text-center">Apply for full property management</h2>
+          <h2 class="text-center"><p class="h1">{{ __('welcome.welcome')}}</p></h2>
           <br/>
-          <form novalidate="novalidate" class="simple_form new_full_property_management_application" id="new_full_property_management_application" 
-            action="{{ url('/get-started/get-info') }}" />
-            <div class="form-group string required full_property_management_application_name"><label class="control-label string required" for="full_property_management_application_name"><abbr title="required"></abbr> <span class="translation_missing" title="translation missing: en-uk.hosts.full_property_management_applications.new.name, current_city: London">Name</span></label><input class="form-control string required" autofocus="autofocus" type="text" name="full_property_management_application_name" id="full_property_management_application_name" /></div>
-            <div class="form-group email required full_property_management_application_email"><label class="control-label email required" for="full_property_management_application_email"><abbr title="required"></abbr> <span class="translation_missing" title="translation missing: en-uk.hosts.full_property_management_applications.new.email, current_city: London">Email</span></label><input class="form-control string email required" type="email" name="full_property_management_application_email" id="full_property_management_application_email" /></div>
+          <form id="new_full_property_management_application" 
+            action="{{url('/')}}/{{Session::get('website_language', config('app.locale'))}}/{{'get-started/get-info'}}" />
+            <div class="form-group string required full_property_management_application_name"><label class="control-label string required" for="full_property_management_application_name"><abbr title="required"></abbr> <span class="translation_missing" title="translation missing: en-uk.hosts.full_property_management_applications.new.name, current_city: London">Name</span></label><input class="form-control string required" autofocus="autofocus" type="text" name="full_property_management_application_name" id="full_property_management_application_name" /><span class="help-block hidden">{{ __('validation.check_input')}}</span></div>
+            <div class="form-group email required full_property_management_application_email"><label class="control-label email required" for="full_property_management_application_email"><abbr title="required"></abbr> <span class="translation_missing" title="translation missing: en-uk.hosts.full_property_management_applications.new.email, current_city: London">Email</span></label><input class="form-control string email required" type="email" name="full_property_management_application_email" id="full_property_management_application_email" /><span class="help-block hidden">{{ __('validation.check_input')}}</span></div>
             
             <div class="row">
               <div class="col-md-6">
@@ -19,9 +19,11 @@
                 <abbr title="required"></abbr> 
                 <span class="translation_missing" title="translation missing: en-uk.hosts.full_property_management_applications.new.mobile_phone, current_city: London">Mobile Phone</span></label>
                 <input class="form-control string phone required" type="tel" name="full_property_management_application_mobile_phone" id="full_property_management_application_mobile_phone_national_format" data-hidden-input-id="full_property_management_application_mobile_phone" />
+                <span class="help-block hidden">{{ __('validation.check_input')}}</span>
               </div>
+            </div>
               <div class="col-md-6">
-                <div class="form-group string required full_property_management_application_postcode"><label class="control-label string required" for="full_property_management_application_postcode"><abbr title="required"></abbr> <span class="translation_missing" title="translation missing: en-uk.hosts.full_property_management_applications.new.postcode, current_city: London">Postcode</span></label><input class="form-control string required" type="text" name="full_property_management_application_postcode" id="full_property_management_application_postcode" /></div>
+                <div class="form-group string required full_property_management_application_postcode"><label class="control-label string required" for="full_property_management_application_postcode"><abbr title="required"></abbr> <span class="translation_missing" title="translation missing: en-uk.hosts.full_property_management_applications.new.postcode, current_city: London">Postcode</span></label><input class="form-control string required" type="text" name="full_property_management_application_postcode" id="full_property_management_application_postcode" /><span class="help-block hidden">{{ __('validation.check_input')}}</span></div>
               </div>
             </div>
             <div class="row">
@@ -49,6 +51,7 @@
                     <option value="Nice">Nice</option>
                     <option value="Cannes">Cannes</option>
                     <option value="Lyon">Lyon</option></select>
+                    <span class="help-block hidden">{{ __('validation.check_input')}}</span>
                 </div>
               </div>
               <div class="col-md-6">
@@ -306,7 +309,9 @@
                 <option value="EH">Western Sahara</option>
                 <option value="YE">Yemen</option>
                 <option value="ZM">Zambia</option>
-                <option value="ZW">Zimbabwe</option></select></div>
+                <option value="ZW">Zimbabwe</option></select>
+              <span class="help-block hidden">{{ __('validation.check_input')}}</span>
+              </div>
               </div>
             </div>
             <div class="row">
@@ -326,6 +331,7 @@
                     <option value="9">9</option>
                     <option value="10">10</option>
                 </select>
+                <span class="help-block hidden">{{ __('validation.check_input')}}</span>
                 </div>
             </div>
               <div class="col-md-6">
@@ -343,12 +349,11 @@
                     <option value="9">9</option>
                     <option value="10">10</option>
                 </select>
+                <span class="help-block hidden">{{ __('validation.check_input')}}</span>
                 </div>
               </div>
             </div>
-            <div class="actions">
-              <input type="submit" name="commit" value="Apply" class="btn btn-lg btn-block btn-primary" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Buttons&#39;, &#39;clicked&#39;, &#39;Full Management Request london&#39;);" data-disable-with="Apply" />
-            </div>
+            <input type="submit" value="Apply" class="btn btn-lg btn-block btn-primary started_click" />
         </form>        
         </div>
       </div>

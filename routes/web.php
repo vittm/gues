@@ -11,12 +11,22 @@
 |
 */
 
-Route::get('{locale}/get-started', function ($locale) {
-    App::setLocale($locale);
-    return view('get-started');
-});
 
-Route::get('{locale}/welcome', 'HomeController@index');
-Route::get('/get-started/get-info', 'GetStartedController@get_info');
-Route::get('{locale}/admin/listings', 'GetStartedController@listing');
-Route::get('/calculator-{block}-{decoration}-{bedrooms}-{email}', 'HomeController@calculator');
+
+Route::get('/', 'HomeController@index');
+Route::get('/admin/listings', 'GetStartedController@listing');
+Auth::routes();
+Route::group(['prefix' => '{locale}'], function () {
+    Route::group(['middleware' => 'locale'], function () {
+        Route::get('/', 'HomeController@index');
+        Route::get('/get-started', function () {
+            return view('get-started');
+        });
+        Route::get('/get-started/get-info', 'GetStartedController@get_info');
+        Route::post('/calculator-{block}-{decoration}-{bedrooms}-{email}', 'HomeController@calculator');
+        Route::get('/get-info', 'HomeController@get_info');
+        Route::get('/thanks', function () {
+            return view('thanks');
+        });
+    });
+});

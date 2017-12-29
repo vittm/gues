@@ -3103,7 +3103,9 @@ select[multiple].input-lg,
     display: block;
     margin-top: 5px;
     margin-bottom: 10px;
-    color: #737373
+    color: #737373;
+    font-size: 13px;
+    float: left;
 }
 @media (min-width: 768px) {
     .form-inline .form-group,
@@ -13393,7 +13395,7 @@ p.small.mini {
     background: #2cc5d7;
     height: 75px !important;
     display: inline-block;
-    min-width: 20%;
+    min-width: 15%;
     max-width: 20%;
     margin: 0 0 0 0.5%;
     background: #2cc5d7;
@@ -16349,14 +16351,16 @@ ul.nav.navbar-nav.navbar-right li a.nav-item-inverted {
     position: absolute;
     top: -4px !important;
     right: -4px !important;
-    width: 150px !important;
-    transition: top ease 1s
+    width: 170px !important;
+    transition: top ease 1s;
+    line-height: 24px;
 }
 ul.nav.navbar-nav.navbar-right.affix li a.nav-item-inverted {
     position: absolute;
     top: -64px !important;
     right: -2px !important;
-    width: 150px !important
+    width: 170px !important;
+    line-height: 24px;
 }
 .nav.navbar-nav.navbar-left.affix {
     width: 100%;
@@ -16402,7 +16406,7 @@ body.controller-pages .navbar-brand {
 .affix .logo {
     margin-top: -22px
 }
-.price-calculator.inline form#new_price_calculator .form-group span.help-block {
+.form-group span.help-block {
     color: #a94442;
     background-color: #f2dede !important;
     padding: 5px 5px 3px 8px !important
@@ -16977,7 +16981,10 @@ h6.basic-package {
     color: #2a2c32;
     font-size: 26px;
     font-weight: 900;
-    line-height: 1.2
+    line-height: 1.2;
+}
+#new_full_property_management_application .help-block {
+    float: initial;
 }
 @media all and (max-width: 480px) {
     section.about-section .container .about .row .col-md-4 p,

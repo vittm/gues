@@ -19,7 +19,8 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link href='https://fonts.googleapis.com/css?family=Karla' rel='stylesheet' type='text/css'>
 <link rel="canonical" href="https://www.guestready.com/en-sg/airbnb-management-singapore/" />
-<script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+<script src="https://maps.googleapis.com/maps/api/js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyCaNb4CAbr82gwqQkhU4WgJ3VPQN3VaTiI"></script>
 <!-- TrustBox script -->
 <script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
 <!-- End Trustbox script -->
@@ -42,7 +43,7 @@
     ga('send', 'pageview', { "title": document.title });
   </script>
 <!-- <script src="https://maps.googleapis.com/maps/api/js"></script> -->
-<script src="{{ URL::to('js/jquery.js') }}" async="async"></script>
+<script src="{{url('/js/jquery.js')}}"></script>
 
   </head>
   <body class="controller-pages action-landing">
@@ -50,7 +51,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-3">
-            <a class="navbar-brand" href="/en-sg/airbnb-management-singapore/">
+            <a class="navbar-brand" href="{{url('/')}}/{{Session::get('website_language', config('app.locale'))}}">
                 <img alt="GustReady - Airbnb Management Service in Singapore" src="{{ url('assets/v2/logo-282448512b55a06e9f4e7077cca2c5c09b0e6978eee6a7129d796e1cacd59049.png')}}" />
 </a>          </div>
           <div class="col-md-9">
@@ -65,13 +66,11 @@
 
               <ul class="nav navbar-nav navbar-left">
                   <li class="dropdown">
-                    <a href="#" class="city dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Singapore <span class="caret"></span></a>
+                    <a href="#" class="city dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        @if (Session::get('website_language', config('app.locale')) == 'vi') {{'Tiếng Việt'}} @else {{'English'}}   @endif <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                      <li><a href="/en-uk/airbnb-management-london/">London</a></li>
-                      <li><a href="/fr-fr/conciergerie-airbnb-paris/">Paris</a></li>
-                      <li><a href="/en-hk/airbnb-management-hong-kong/">Hong Kong</a></li>
-                      <li><a href="/en-sg/airbnb-management-singapore/">Singapore</a></li>
-                      <li><a href="/en-my/airbnb-management-kuala-lumpur/">Kuala Lumpur</a></li>
+                      <li><a href="{{ url('/vi') }}">Tiếng Việt</a></li>
+                      <li><a href="{{ url('/en') }}">English  </a></li>
                     </ul>
                   </li>
 
@@ -86,9 +85,8 @@
                   <a href="mailto:singapore@guestready.com" class="email">singapore@guestready.com</a>
                 </li>
                 <li class="getstarted-right">
-                  <a class="getstarted-top" href="#">Get Started</a>
+                  <a class="getstarted-top" href="{{url('/')}}/{{Session::get('website_language', config('app.locale'))}}/{{'get-started'}}">Get Started</a>
                 </li>
-
 
               </ul>
             </div>
@@ -96,15 +94,14 @@
             <div id="navbar-collapse_menu" class="collapse navbar-collapse">
               <ul class="nav navbar-nav navbar-right">
                 <li class="hidden-sm hidden-md hidden-lg"><a href="/">Home</a></li>
-                <li class=""><a href="how-it-works.html">How it works</a></li>
-                <li class=""><a href="services.html">Services</a></li>
+                <li class=""><a href="how-it-works.html">{{ __('welcome.how_it_work')}}</a></li>
+                <li class=""><a href="services.html">{{ __('welcome.services')}}</a></li>
                   <li class="">
-                    <a href="homes.html">Our homes</a>
+                    <a href="homes.html">{{ __('welcome.our_homes')}}</a>
                   </li>
-                <li class=""><a href="pricing.html">Pricing</a></li>
-                <li class=""><a href="about-us.html">About us</a></li>
-                <li><a target="_blank" href="#">Airbnb Tips</a></li>
-                <li><a class="nav-item-inverted" href="#">Get Started</a></li>
+                <li class=""><a href="pricing.html">{{ __('welcome.pricing')}}</a></li>
+                <li class=""><a href="about-us.html">{{ __('welcome.about')}}</a></li>
+                <li><a class="nav-item-inverted" href="{{url('/')}}/{{Session::get('website_language', config('app.locale'))}}/{{'get-started'}}">{{ __('welcome.start')}}</a></li>
               </ul>
             </div>
           </div>
@@ -233,17 +230,61 @@
                 bedrooms = $('#price_calculator_bedrooms_count').val(),
                 email = $('#price_calculator_email').val();
             e.preventDefault();
-            $.ajax({
-                url: "{{ url('/calculator') }}-"+block+"-"+decoration+"-"+bedrooms+"-"+email+"",
-                type: "POST",
-                cache: false,
-                data: {'block':block,'decoration':decoration,'bedrooms':bedrooms,'email':email,"_token": "{{ csrf_token() }}"},
-                dataType:"html",
-                success: function(val){
-                    console.log(val);
-                  }
-                });
+              $('.new_price_calculator .form-group input, .new_price_calculator .form-group select').each(function() {
+                if ($(this).val() == '') {
+                  $(this).parents('.form-group').find('.help-block').removeClass('hidden');
+                }else {
+                  $(this).parents('.form-group').find('.help-block').addClass('hidden');
+                  $.ajax({
+                    url: "{{url('/')}}/{{Session::get('website_language', config('app.locale'))}}/{{'calculator'}}-"+block+"-"+decoration+"-"+bedrooms+"-"+email+"",
+                    type: "POST",
+                    cache: false,
+                    data: {'block':block,'decoration':decoration,'bedrooms':bedrooms,'email':email,"_token": "{{ csrf_token() }}"},
+                    dataType:"html",
+                    success: function(val){ 
+                        if(!val){
+                          $('.section-title').addClass('hidden'); 
+                          $('.section-title--not-result').removeClass('hidden');
+                          $('.price-calculator-result').addClass('hidden');
+                          $('.price-calculator-help').addClass('hidden');
+                        }else {
+                          $('.section-title').removeClass('hidden');
+                          $('.section-title--not-result').addClass('hidden');
+                          $('.price-calculator-result').removeClass('hidden');
+                          $('.price-calculator-help').removeClass('hidden');
+                          $('.price').text(val);
+                          var top = $('.jumbotron').height();
+                          $('html,body').animate({scrollTop: top}, 1000);
+                        }
+                      }
+                    });
+                }
+              });
+            
             return false;
+        });
+
+        $('.call_click').click(function(e){
+          $('#new_price_calculator_call input').each(function() {
+            if ($(this).val() == '') {
+                $(this).parents('.form-group').find('.help-block').removeClass('hidden');
+                e.preventDefault();
+              }else {
+                $(this).parents('.form-group').find('.help-block').addClass('hidden');
+              }
+          });
+        });
+
+       
+        $('.started_click').click(function(e){
+          $('#new_full_property_management_application input, #new_full_property_management_application select').each(function() {
+            if ($(this).val() == '') {
+                $(this).parents('.form-group').find('.help-block').removeClass('hidden');
+                e.preventDefault();
+              }else {
+                $(this).parents('.form-group').find('.help-block').addClass('hidden');
+              }
+          });
         });
       </script>
 </body>

@@ -15,6 +15,8 @@
                                             <th class="text-center">id</th>
                                             <th >Tên khách hàng</th>
                                             <th class="">Email</th>
+                                            <th class="">Phone</th>
+                                            <th class="">Call Me</th>
                                             <th class="">PostCode </th>
                                             <th class="">Nước</th>
                                             <th> Thành Phố</th>
@@ -32,6 +34,12 @@
                                             <td class="td-name">
                                             {{ $value->email}}
                                             </td>
+                                            <td class="td-name">
+                                                {{ $value->phone}}
+                                            </td>
+                                            <td class="td-name">
+                                            {{ $value->call}}
+                                            </td>
                                             <td class="td-number">
                                             {{ $value->postcode}}
                                             </td>
@@ -45,6 +53,7 @@
                                 </table>
                             </div>
                         </div><!--  end card  -->
+                        {{ $customers->links() }}
                     </div> <!-- end col-md-12 -->
                 </div> <!-- end row -->
 @Stop

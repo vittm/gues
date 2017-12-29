@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use DB;
 use App\Customers;
+use Session;
 
 class GetStartedController extends Controller
 {
@@ -20,19 +21,19 @@ class GetStartedController extends Controller
         $db->fullname = $value['full_property_management_application_name'];
         $db->email = $value['full_property_management_application_email'];
         $db->phone = $value['full_property_management_application_mobile_phone'];
-        $db->postcode = $value['full_property_management_application_postcode'];;
-        $db->city = $value['full_property_management_application_city'];;
-        $db->country = $value['full_property_management_application_country_code'];;
-        $db->bedrooms = $value['full_property_management_application_bedrooms_count'];;
-        $db->badrooms = $value['full_property_management_application_bathrooms_count'];;
+        $db->postcode = $value['full_property_management_application_postcode'];
+        $db->city = $value['full_property_management_application_city'];
+        $db->country = $value['full_property_management_application_country_code'];
+        $db->bedrooms = $value['full_property_management_application_bedrooms_count'];
+        $db->badrooms = $value['full_property_management_application_bathrooms_count'];
 
         $db->save();
-        session()->flash('flash_message', 'Article was stored with success');
-        return redirect('/');
+        
+        return redirect(Session::get('website_language', config('app.locale'))."/thanks");
     }
     public function listing()
     {
-        $customers= DB::table('customers')->get();
+        $customers= DB::table('customers')->paginate(15);
         return view('admin.listings-user',['customers'=>$customers]);
     }
 }

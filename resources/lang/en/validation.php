@@ -117,5 +117,8 @@ return [
     */
 
     'attributes' => [],
-
+    'check_block' => 'Please choose block',
+    'check_bedrooms' => 'Please choose the number of bedrooms',
+    'check_email' => 'Please input your email',
+    'check_input' => "can't be blank"
 ];

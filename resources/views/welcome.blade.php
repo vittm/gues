@@ -13,18 +13,20 @@
 
         <div class='price-calculator inline'>
   <h2 class='h3 header'><img src="{{ url('assets/wallet_icon-6937ad45a2530a6d973ea5a696d1ab19770533e8928ad628fe5614fe45bb43d0.png')}}" alt="Wallet icon" />{{ __('welcome.txt_find_out')}}</h2>
-  <form novalidate="novalidate" class="simple_form new_price_calculator" id="new_price_calculator" 
-    accept-charset="UTF-8" data-remote="true" method="post">
+  <form class="simple_form new_price_calculator" id="new_price_calculator" accept-charset="UTF-8" data-remote="true" method="post">
     <div class="form-group email required price_calculator_email price_calculator_email--padding">
     <select class="string required form-control price_calculator_type " name="price_calculator_email_type " id="price_calculator_block">
+        <option value="">Block</option>
       @foreach($types as $key => $value)
         <option value="{{$value->id}}">{{ $value->type }}</option>
       @endforeach
-    </select>   
+    </select>
+    <span class="help-block hidden">{{ __('validation.check_block')}}</span>   
   </div>  
 
 <div class="form-group hidden price_calculator_lat"><input class="form-control hidden" geo="lat" type="hidden" name="price_calculator[lat]" id="price_calculator_lat" /></div>        <div class="form-group hidden price_calculator_lng"><input class="form-control hidden" geo="lng" type="hidden" name="price_calculator[lng]" id="price_calculator_lng" /></div>        <div class="form-group hidden price_calculator_formatted_address"><input class="form-control hidden" geo="formatted_address" type="hidden" name="price_calculator[formatted_address]" id="price_calculator_formatted_address" /></div>        <div class="form-group hidden price_calculator_route"><input class="form-control hidden" geo="route" type="hidden" name="price_calculator[route]" id="price_calculator_route" /></div>        <div class="form-group hidden price_calculator_street_number"><input class="form-control hidden" geo="street_number" type="hidden" name="price_calculator[street_number]" id="price_calculator_street_number" /></div>        <div class="form-group hidden price_calculator_postal_code"><input class="form-control hidden" geo="postal_code" type="hidden" name="price_calculator[postal_code]" id="price_calculator_postal_code" /></div>        <div class="form-group hidden price_calculator_country"><input class="form-control hidden" geo="country" type="hidden" name="price_calculator[country]" id="price_calculator_country" /></div>
-      <div class="form-group string required price_calculator_bedrooms_count"><label class="control-label string required" for="price_calculator_bedrooms_count"><abbr title="required"></abbr> </label><div class="input-group">
+      <div class="form-group string required price_calculator_bedrooms_count"><label class="control-label string required" for="price_calculator_bedrooms_count"><abbr title="required"></abbr> </label>
+      <div class="input-group">
         <div class="bethrooms-counter-visible">
           <div class="input-group-addon shortcut"><i class="fa fa-bed"></i></div>
           <input class="string required readonly form-control" readonly="readonly" placeholder="{{ __('welcome.input_bedrooms')}}" type="text" name="price_calculator[bedrooms_count]" id="price_calculator_bedrooms_count" />
@@ -33,16 +35,17 @@
              <a class="down" href="#">-</a>
            </div>
          </div>
+         <span class="help-block hidden">{{ __('validation.check_bedrooms')}}</span>
 </div></div>
       <div class="form-group email required price_calculator_email"><label class="control-label email required" for="price_calculator_email"><abbr title="required"></abbr></label><div class="input-group">
         <div class="input-group-addon shortcut"><i class="fa fa-envelope-o"></i></div>
-        <input class="string email required form-control" placeholder="{{ __('welcome.input_email')}}" type="email" name="price_calculator_email" id="price_calculator_email" /></div></div>
-      
+        <input class="string email required form-control" placeholder="{{ __('welcome.input_email')}}" type="email" name="price_calculator_email" id="price_calculator_email" /></div>
+        <span class="help-block hidden">{{ __('validation.check_email')}}</span></div>
         <div class="form-group email required price_calculator_email price_calculator_email--padding">
           <select class="string required form-control price_calculator_type" name="price_calculator_email_type" id="calculator_decoration">
-            <option value="decoration">Phòng trống</option>
-            <option value="notdecoration">Phòng không trống</option>
-          </select>   
+            <option value="decoration">{{ __('welcome.txt_empty_rooms') }} </option>
+            <option value="notdecoration">{{ __('welcome.txt_non_empty') }}</option>
+          </select>
         </div>
       <input type="submit" name="commit" value="{{ __('welcome.btn_calculate')}}" class="btn btn-primary calculate_clicks" />
 </form></div>
@@ -59,35 +62,20 @@
     </div>
   </div>
 <!-- form hidden -->
-  <div class="container price-calculator-result">
+  <div class="container price-calculator-result hidden">
   <div class="wrapper">
-    <img class="img-responsive" src="{{ url('/assets/price-ok-54a523249c5ffc2a56ec568e579e5ed019a6b3869b067bec054c48df19da19ea.png')}}" alt="Price ok">
+    <img class="img-responsive" src="{{ url('/assets/price.png')}}" alt="Price ok">
     <div class="content">
       <div class="header">
         <div>Nice! You could earn   <b class="price">£829</b>
- per   <div class="dropdown">
-    <a data-toggle="dropdown" id="price_period" class="dropdown-toggle" href="#">
-      <span class="period">week</span>
-      <span class="caret"></span>
-</a>    <ul class="dropdown-menu" aria-labelledby="price_period">
-      <li>
-        <a data-price="£148" href="#">day</a>
-      </li>
-      <li>
-        <a data-price="£829" href="#">week</a>
-      </li>
-      <li>
-        <a data-price="£3,553" href="#">month</a>
-      </li>
-    </ul>
-  </div>
+ per month
 </div> renting on short-let services like Airbnb.
       </div>
       <p class="note">approximate based on average earnings</p>
     </div>
   </div>
 </div>
-<div class="price-calculator-help">
+<div class="price-calculator-help hidden">
   <div class="container">
     <h3>We can help.</h3>
 <div>GuestReady provides Airbnb management services to take the hassle out of hosting.</div>
@@ -95,31 +83,42 @@
 <br>
 <div>Want to know more? Find out about our <a href="/management">Airbnb property management services</a> or leave your phone number below for an introduction.</div>
 
-    <form novalidate="novalidate" class="simple_form new_price_calculator_call" id="new_price_calculator_call" action="/en-uk/price_calculator_call/" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="✓">
-    <div class="form-group hidden price_calculator_call_log"><input class="form-control hidden" type="hidden" value="2743" name="price_calculator_call[price_calculator_log_id]" id="price_calculator_call_price_calculator_log_id"></div>    <div class="row">
+    <form novalidate="novalidate" class="simple_form new_price_calculator_call" id="new_price_calculator_call" action="{{url('/')}}/{{Session::get('website_language', config('app.locale'))}}/{{'get-info'}}" method="get">
+    {{ csrf_field() }}
+     <div class="row">
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-        <div class="form-group string required price_calculator_call_full_name"><label class="control-label string required" for="price_calculator_call_full_name"><abbr title="required"></abbr> Full Name</label><input class="form-control string required" type="text" name="price_calculator_call[full_name]" id="price_calculator_call_full_name"></div>
+        <div class="form-group string required price_calculator_call_full_name"><label class="control-label string required" for="price_calculator_call_full_name">
+          <abbr title="required"></abbr> Full Name</label>
+          <input class="form-control string required" type="text" name="price_calculator_call_full_name" id="price_calculator_call_full_name">
+          <span class="help-block hidden">{{ __('validation.check_input')}}</span>
+        </div>
       </div>
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-        <div class="form-group email required price_calculator_call_email"><label class="control-label email required" for="price_calculator_call_email"><abbr title="required"></abbr> Email</label><input class="form-control string email required" type="email" value="kanbi1995@gmail.com" name="price_calculator_call[email]" id="price_calculator_call_email"></div>
-      </div>
+        <div class="form-group email required price_calculator_call_email"><label class="control-label email required" for="price_calculator_call_email">
+          <abbr title="required"></abbr> Email</label><input class="form-control string email required" type="email" value="kanbi1995@gmail.com" name="price_calculator_call_email" id="price_calculator_call_email">
+          <span class="help-block hidden">{{ __('validation.check_email')}}</span></div>
+        </div>
     </div>
     <div class="row">
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-        <div class="form-group select required price_calculator_call_preference"><label class="control-label select required" for="price_calculator_call_preference"><abbr title="required"></abbr> Call Me</label><select class="form-control select required" name="price_calculator_call[preference]" id="price_calculator_call_preference"><option selected="selected" value="asap">asap</option>
-<option value="morning">morning</option>
-<option value="afternoon">afternoon</option>
-<option value="evening">evening</option></select></div>
+        <div class="form-group select required price_calculator_call_preference"><label class="control-label select required" for="price_calculator_call_preference">
+          <abbr title="required"></abbr> Call Me</label><select class="form-control select required" name="price_calculator_call_preference" id="price_calculator_call_preference"><option selected="selected" value="asap">asap</option>
+        <option value="morning">morning</option>
+        <option value="afternoon">afternoon</option>
+        <option value="evening">evening</option></select>
+      </div>
       </div>
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-        <div class="form-group tel required price_calculator_call_phone"><label class="control-label tel required" for="price_calculator_call_phone"><abbr title="required"></abbr> Phone Number</label><input class="form-control string tel required" type="tel" name="price_calculator_call[phone]" id="price_calculator_call_phone"></div>
+        <div class="form-group tel required price_calculator_call_phone"><label class="control-label tel required" for="price_calculator_call_phone">
+          <abbr title="required"></abbr> Phone Number</label>
+          <input class="form-control string tel required" type="tel" name="price_calculator_call_phone" id="price_calculator_call_phone">
+          <span class="help-block hidden">{{ __('validation.check_input')}}</span>
+        </div>
       </div>
     </div>
     <div class="row">
       <div class="col-xs-12 col-sm-offset-4 col-sm-4">
-        <button name="button" type="submit" data-disable-with="Processing...
-" class="btn btn-primary"><i class="fa fa-phone" aria-hidden="true"></i> Call me
-</button>
+        <button type="submit" class="btn btn-primary call_click"><i class="fa fa-phone" aria-hidden="true"></i> Call me</button>
       </div>
     </div>
 </form>
@@ -133,31 +132,31 @@
     <div class="bg-stat"></div>
     <div class="container text-center">
       <p class="section-title">{{ __('welcome.txt_agency_for_managing') }}</p>
+      <p class="section-title section-title--not-result hidden">Không tìm thấy kết quả</p>
       <div class="divider"></div>
-      <p class="basic">{{ __('welcome.txt_we_manage')}} <span>{{ __('welcome.txt_over_100_properties')}} </span> {{ __('welcome.txt_helping_owners')}}
-</p>
+      <p class="basic">{{ __('welcome.txt_we_manage')}} <span>{{ __('welcome.txt_over_100_properties')}} </span> {{ __('welcome.txt_helping_owners')}}  </p>
       <div class="props">
         <div class="row">
           <div class="col-md-4 col-sm-12">
-            <h3><strong>5<sup class="fa fa-star"></sup></strong><span>AIRBNB<br>GUEST RATINGS</span>
+            <h3><strong>5<sup class="fa fa-star"></sup></strong><span>{{ __('welcome.guest_ratings_1') }} <br> {{ __('welcome.guest_ratings_2') }}</span>
 </h3>
           </div>
           <div class="col-md-4 col-sm-12">
-            <h3><strong>85%</strong><span>OCCUPANCY<br>PER LISTING</span>
+            <h3><strong>85%</strong><span>{{ __('welcome.occupancy_1') }}<br>{{ __('welcome.occupancy_2') }}</span>
 </h3>
           </div>
           <div class="col-md-4 col-sm-12">
-            <h3><strong>45%</strong><span>SUPERHOSTS</span>
+            <h3><strong>45%</strong><span>{{ __('welcome.superhosts') }}</span>
 </h3>
           </div>
         </div>
       </div>
       <div class="row clearfix"></div>
-      <a class="btn btn-large btn-primary" href="/en-sg/hosts/full_property_management_applications/new/">Get Started</a>
+      <a class="btn btn-large btn-primary" href="/en-sg/hosts/full_property_management_applications/new/">{{ __('welcome.start') }}</a>
       <!-- <a class="btn btn-large btn-primary">Get Started</a> -->
-      <p class="small">with our 5* Airbnb Property Management Service</p>
+      <p class="small">{{ __('welcome.stars') }}</p>
       <img class="no-filters" src="{{ url('assets/v2/stars-eb92a16d1f0634049023974cbc9205e26df201bb5aa2dad52c7697d4f4024064.png')}}" alt="Stars" />
-      <h4>As seen on</h4>
+      <h4>{{ __('welcome.see') }}</h4>
       <div class="row">
             <a target="_blank" rel="nofollow" href="https://www.forbes.com/sites/samameen/2017/04/03/the-key-to-success-for-hong-kong-startups-think-bigger/#3aa7e0519326"><img src="{{ url('assets/coverage/Forbes_logo.svg-cb2f1b67ce7986d6d6194a8a4aa20eb2bac48f86990a2fc1b93b5c37b03ac29f.png')}}" alt="Forbes logo.svg" /></a>
             <a target="_blank" rel="nofollow" href="https://techcrunch.com/tag/guestready/"><img src="{{ url('assets/coverage/tc-techcrunch-ae70f5ca426b4b6c74aade00e1ce6916ea32d6dbd554e050cf3758228e59bf2a.svg')}}" alt="Tc techcrunch" /></a>
@@ -172,35 +171,35 @@
 
   <section class="about-section">
     <div class="container">
-      <p class="section-title text-center">Why use GuestReady?</p>
+      <p class="section-title text-center">{{ __('welcome.why') }}</p>
       <div class="divider"></div>
       <div class="about">
         <div class="row">
           <div class="col-md-4">
             <img alt="Increase your Airbnb income in Singapore" src="{{ url('assets/v2/about03-e28b8f81b3566169b31bba74bb7dcd15279930d214cf22fa2c1d31c7e654c984.png')}}" />
-            <h3>Boost your<br> Airbnb income</h3>
-            <p>Supplement your revenues by renting out your home when it is empty using our 5* property management service. Thanks to our expertise on real estate and hospitality trends in Singapore, we will optimise your listing, pricing and occupancy to make it more attractive on platforms like Airbnb.</p>            
+            <h3>{{ __('welcome.income') }}</h3>
+            <p>{{ __('welcome.income_detail') }}</p>            
           </div>
           <div class="col-md-4">
             <img alt="Hassle Free Airbnb Management Singapore" src="{{ url('assets/v2/about02-af8d8d36cd857c2ca560f606f9dbabaa9d18e5f44f108c0aef68428a02968e7e.png')}}" />
-            <h3>We take the hassle<br>out of hosting</h3>
-            <p>We manage everything for your Airbnb property: from optimising your listing and its rental price, to key exchange, cleaning, laundry, maintenance and much more;so you sit back and relax, and your guests go home smiling.</p>
+            <h3>{{ __('welcome.hassle') }}</h3>
+            <p>{{ __('welcome.hassle_detail') }}</p>
           </div>
           <div class="col-md-4">
             <img alt="Flexible Airbnb Management Singapore" src="{{ url('assets/v2/about01-a9aae8a3a8f145ae996036f13e3086482489086f51b61cf0aa7baa33bc9a780d.png')}}" />
-            <h3>Fully flexible<br>short lets</h3>
-            <p>Whether you wish to rent out your home while you’re exploring the world, or you have an empty apartment in the city, our bespoke property management solution adapts to all kinds of schedules, so you always come back home and find it just the way you left it.</p>
+            <h3>{{ __('welcome.flexible') }}</h3>
+            <p>{{ __('welcome.flexible_detail') }}</p>
           </div>
         </div>
         <div class="row">
           <div class="col-md-4">
-            <a class="btn btn-primary" href="#price-calc">Find out how much<br>you can earn on Airbnb</a>
+            <a class="btn btn-primary" href="#price-calc">{{ __('welcome.find_out') }}</a>
           </div>
           <div class="col-md-4">
-            <a class="btn btn-primary" href="/en-sg/services/">Discover our Airbnb<br>Management Services in detail</a>
+            <a class="btn btn-primary" href="/en-sg/services/">{{ __('welcome.discover') }}</a>
           </div>
           <div class="col-md-4">
-            <a class="btn btn-primary" href="/en-sg/hosts/full_property_management_applications/new/">Get in touch with<br>our Airbnb experts</a>
+            <a class="btn btn-primary" href="/en-sg/hosts/full_property_management_applications/new/">{{ __('welcome.contact') }}</a>
           </div>
         </div>
       </div>
@@ -209,68 +208,68 @@
 
   <section class="services-section">
     <div class="container text-center">
-    <p class="section-title">GuestReady takes care of everything</p>
+    <p class="section-title">{{ __('welcome.take_care') }}</p>
     <div class="divider"></div>
-    <p class="basic">As a Luxury Vacation Rental Manager, our suite of services is designed to provide the best    experience to your guests, each time they stay at your place.</p>
+    <p class="basic">{{ __('welcome.take_care_detail') }}</p>
     <div class="our-services">
       <div class="row">
         <div class="col-md-10 col-md-offset-1">
           <div class="col-md-4">
             <a href="/en-sg/services/#listing-creation">
               <img alt="GuestReady will create an attractive listing on Airbnb for you" src="{{ url('assets/v2/s01-752a5cbcf7011d6d626491b23f175bad7389bb2789e788e4bfb169bec1ac7f23.png')}}" />
-              <span>Listing creation</span>
+              <span>{{ __('welcome.listing') }}</span>
 </a>          </div>
           <div class="col-md-4">
             <a href="/en-sg/services/#professional-photography">
               <img alt="A professional photographer will take photos of your Singapore home" src="{{ url('assets/v2/s02-79df7662703feab0b6c5533c1a05eae045dcf91c2b76068be5686a92a702f784.png')}}" />
-              <span>Professional Photography</span>
+              <span>{{ __('welcome.photography') }}</span>
 </a>          </div>
           <div class="col-md-4">
             <a href="/en-sg/services/#concierge-service">
               <img alt="Our concierges are available around the clock in Singapore" src="{{ url('assets/v2/s03-aff046514f7a1a7cef0f91083830cf0f66926f36de81524bf7f034d6c78fd4d1.png')}}" />
-              <span>24/7 Concierge Service</span>
+              <span>{{ __('welcome.concierge') }}</span>
 </a>          </div>
           <div class="col-md-4">
             <a href="/en-sg/services/#guest-communication">
               <img alt="Rent your Singapore Airbnb to the most respectable guests" src="{{ url('assets/v2/s04-0886c39aa9f3ff3c4bfb13757d91877cdca067a8932e9931a1331d1ac440c91d.png')}}" />
-              <span>Guest communication and screening</span>
+              <span>{{ __('welcome.guest') }}</span>
 </a>          </div>
           <div class="col-md-4">
             <a href="/en-sg/services/#personal-welcome">
               <img alt="Personal welcome and key exchange for your guests" src="{{ url('assets/v2/s05-99948da773ed614ef6ce7066f81ab0c76dbcef23dc1018fa41d2962fc6c5332e.png')}}" />
-              <span>Personal welcome &amp; key exchange</span>
+              <span>{{ __('welcome.key') }}</span>
 </a>          </div>
           <div class="col-md-4">
             <a href="/en-sg/services/#price-optimisation">
               <img alt="Price optimisation for better yield management" src="{{ url('assets/v2/s06-311864ca6015e6ad17891d1cbe4949d0cec3e788008b07ac68ff7fb0ee7628e5.png')}}" />
-              <span>Price optimisation</span>
+              <span>{{ __('welcome.price') }}</span>
 </a>          </div>
           <div class="col-md-4">
             <a href="/en-sg/services/#premium-amenities">
               <img alt="Toiletries and essentials for your Singapore guests" src="{{ url('assets/v2/s07-5a067c1f80ec082a6724949f98de26bc7b6473d02d0e7e37771d9aa358c014b2.png')}}" />
-              <span>Premium amenities</span>
+              <span>{{ __('welcome.amenties') }}</span>
 </a>          </div>
           <div class="col-md-4">
             <a href="/en-sg/services/#cleaning-services">
               <img alt="Cleaning and fresh linen for your Singapore Airbnb" src="{{ url('assets/v2/s08-8568a6c919fc15e89e6dd203007eec7d0ecb958b98bbdc67f25566b8c8bf5e53.png')}}" />
-              <span>Cleaning, linen, and laundry services</span>
+              <span>{{ __('welcome.cleaning') }}</span>
 </a>          </div>
           <div class="col-md-4">
             <a href="/en-sg/services/#property-maintenance">
               <img alt="Small repairs and on ground management of your Airbnb in Singapore" src="{{ url('assets/v2/s09-bdd91133ab2e31565620c0977ce348059eaa342c478e6f5d77e410d12a6e6837.png')}}" />
-              <span>Property maintenance</span>
+              <span>{{ __('welcome.property') }}</span>
 </a>          </div>
         </div>
       </div>
     </div>
-    <a class="btn btn-primary" href="/en-sg/services/">Discover our Airbnb Property <br> Management Services in detail
+    <a class="btn btn-primary" href="/en-sg/services/">{{ __('welcome.in_detail') }}
 </a>
   </div>
   </section>
 
   <section class="partners-section">
     <div class="container swiper-container">
-      <h4>Vacation Rentals managed by us perform extremely well on platforms like Airbnb, Booking.com, VRBO and more…</h4>
+      <h4>{{ __('welcome.take_care_detail') }}</h4>
       <div class="swiper-wrapper">
         <div class="swiper-slide">
           <img alt="AirBnB management Singapore" src="{{ url('assets/v2/partners/airbnb-dd7dc57c14237ddeedd0a86cfad42d6afccedd90e817e5a65753925e00976b8d.png')}}" />
@@ -314,7 +313,7 @@
 
   <section class="testimonials-section">
       <div class="container">
-        <p class="section-title text-center">What our customers are saying…</p>
+        <p class="section-title text-center">{{ __('welcome.saying') }}</p>
         <div class="divider"></div>
         <div class="slider">
           <div class="row">
@@ -382,7 +381,7 @@
       </div>
 
         <div class="container text-center">
-          <a class="btn btn-primary" href="/en-sg/homes/">Learn more about the Singapore homes we manage on Airbnb</a>
+          <a class="btn btn-primary" href="/en-sg/homes/">{{ __('welcome.vietnam_home') }}</a>
         </div>
 
 
@@ -390,40 +389,40 @@
 
   <section class="management-section">
     <div class="container">
-      <p class="section-title text-center">Airbnb Management in Singapore</p>
+      <p class="section-title text-center">{{ __('welcome.take_care_detail') }}</p>
       <div class="divider"></div>
       <div class="row faq">
         <div class="col-md-6 block">
-          <p>As the financial and medical hub for Southeast Asia and a popular stopover for travellers exploring the region, Airbnb listings in Singapore see a steady flow of guests checking in.
+          <p>{{ __('welcome.argument1') }}
 </p>
           <a class="faq" href="#" data-faq="faq1">
             <img src="{{ url('assets/v2/qs-dbe8653072f6d8640bf90286718a9c0b4170755e560e8fc466b945bf6a61c12e.png')}}" alt="Qs" />
-            <span>How much does Airbnb Management cost?</span>
+            <span>{{ __('welcome.q1') }}</span>
           </a>
-          <div class="answ answ-opened" data-faq="faq1"><p>GuestReady offers homeowners two ways to earn income from their homes:</p> <ol>
-  <li><strong>Percentage Service Fee</strong> - Homeowners will pay a fee from 18% of their rental income for the Airbnb management services. There will be additional charges for cleaning and laundry services.</li>
-  <li><strong>Fixed Income Guarantee</strong> - Homeowners will be given a pre-determined monthly income from their short term rentals. Every month, GuestReady will pay homeowners a defined amount based on your property and unique pricing method. GuestReady understands the value of your property on Airbnb and we are confident to give you a fixed monthly rent.</li>
+          <div class="answ answ-opened" data-faq="faq1"><p>{{ __('welcome.a1') }}</p> <ol>
+        <li><strong>{{ __('welcome.a11') }}</strong>{{ __('welcome.a111') }}</li>
+        <li><strong>{{ __('welcome.a12') }}</strong>{{ __('welcome.a121') }}</li>
 </ol>
 </div>
           <a class="faq" href="#" data-faq="faq2">
             <img src="{{ url('assets/v2/qs-dbe8653072f6d8640bf90286718a9c0b4170755e560e8fc466b945bf6a61c12e.png')}}" alt="Qs" />
-            <span>My property is not on Airbnb, can I use GuestReady?</span>
+            <span>{{ __('welcome.q3') }}</span>
           </a>
-          <div class="answ answ-opened" data-faq="faq2"><p>Most definitely! As long as you are keen on exploring short term rentals for your home, we will help you do the necessary. Get your home on Airbnb through GuestReady in 3 simple steps (link back to Airbnb management page)</p>
+          <div class="answ answ-opened" data-faq="faq2"><p></p>
 </div>
         </div>
         <div class="col-md-6 block">
-          <p>Attracted by lower nightly rates and the desire for a &quot;local experience&quot;, travellers are increasingly favouring Airbnb over hotels in the Little Red Dot. Its not just apartments around Marina Bay that are in high demand, but heartland areas such as Joo Chiat and Tiong Bahru are also sought after.
+          <p>{{ __('welcome.argument2') }}
 </p>
           <a class="faq" href="#" data-faq="faq3">
             <img src="{{ url('assets/v2/qs-dbe8653072f6d8640bf90286718a9c0b4170755e560e8fc466b945bf6a61c12e.png')}}" alt="Qs" />
-            <span>How can I earn more from my rental property through GuestReady?</span>
+            <span>{{ __('welcome.q2') }}</span>
           </a>
-          <div class="answ answ-opened" data-faq="faq3"><p>We have developed a unique pricing strategy that takes into consideration factors such as location, number of bedrooms, historical pricing data and many more factors to maximize your revenue per booking.</p>
+          <div class="answ answ-opened" data-faq="faq3"><p>{{ __('welcome.a2') }}.</p>
 </div>
           <a class="external-link" href="/en-sg/faq/">
             <img src="{{ url('assets/v2/qs-dbe8653072f6d8640bf90286718a9c0b4170755e560e8fc466b945bf6a61c12e.png')}}" alt="Qs" />
-            <span>You have other questions? Go to FAQ</span>
+            <span>{{ __('welcome.q4') }}</span>
 </a>        </div>
       </div>
     </div>
@@ -434,8 +433,8 @@
       <div class="row">
         <div class="col-md-10 col-md-offset-1">
           <div class="refer">
-            <h4>Make up to $600 by introducing us to a new Airbnb host.<br>They’ll thank you, we promise!</h4>
-            <a class="btn btn-orange" href="/en-sg/referral-programme/">Refer a host</a>
+            <h4>{{ __('welcome.calling') }}<br></h4>
+            <a class="btn btn-orange" href="/en-sg/referral-programme/">{{ __('welcome.refer_a_host') }}</a>
           </div>
         </div>
       </div>
@@ -448,7 +447,7 @@
         <div class="col-md-12">
           <div id="mc_embed_signup">
             <form action="//GuestReady.us13.list-manage.com/subscribe/post?u=e5cb2dca535631d35814c76ea&amp;id=798f8399da" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-              <h4>Sign up for our <span>newsletter</span></h4>
+              <h4>{{ __('welcome.newsletter') }}<span>{{ __('welcome.newsletters') }}</span></h4>
               <input type="email" name="EMAIL" placeholder="Enter Email Address" id="mce-EMAIL">
               <input type="submit" id="mc-embedded-subscribe" value="Sign Up">
 
