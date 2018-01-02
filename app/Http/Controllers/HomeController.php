@@ -35,6 +35,15 @@ class HomeController extends Controller
     public function calculator($lang,$block,$decoration,$bedrooms,$email)
     {
         $types = DB::table('rooms')->where([['id_data','=',$block],['count','=',$bedrooms]])->select($decoration)->get();
+
+        $db = new Customers;
+        $db->block = $block;
+        $db->email = $email;
+        $db->type = $decoration;
+        $db->bedrooms = $bedrooms;
+        $db->typeTable = '1';
+        $db->save();
+
         if($types != null) {
             foreach ($types as $key => $value) {
                 $result = $value->$decoration;
@@ -52,6 +61,7 @@ class HomeController extends Controller
         $db->email = $value['price_calculator_call_email'];
         $db->phone = $value['price_calculator_call_phone'];
         $db->call = $value['price_calculator_call_preference'];
+        $db->typeTable = '2';
         $db->save();
 
         return redirect(Session::get('website_language', config('app.locale'))."/thanks");

@@ -15,6 +15,8 @@
 
 Route::get('/', 'HomeController@index');
 Route::get('/admin/listings', 'GetStartedController@listing');
+Route::get('/admin/listings-call-me', 'GetStartedController@listing_call_me');
+Route::get('/admin/listings-search', 'GetStartedController@listing_search');
 Auth::routes();
 Route::group(['prefix' => '{locale}'], function () {
     Route::group(['middleware' => 'locale'], function () {

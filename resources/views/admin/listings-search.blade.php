@@ -5,7 +5,7 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="header text-center">
-                                <h4 class="title">Danh sách khách hàng thuê</h4>
+                                <h4 class="title">Khách kiểm tra giá cho thuê</h4>
                                 <br />
                             </div>
                             <div class="content table-responsive table-full-width">
@@ -13,11 +13,10 @@
                                     <thead>
                                         <tr>
                                             <th class="text-center">id</th>
-                                            <th >Tên khách hàng</th>
+                                            <th >Block/Căn</th>
                                             <th class="">Email</th>
-                                            <th> Thành Phố</th>
-                                            <th> Phòng ngủ</th>
-                                            <th> Phòng tắm</th>
+                                            <th> Bedrooms</th>
+                                            <th> Kiểu phòng</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -26,13 +25,12 @@
                                             <td class="td-name">
                                                 {{ $value->id}}
                                             </td>
-                                            <td class="td-number">{{ $value->fullname}}</td>
+                                            <td class="td-number">{{ $value->block}}</td>
                                             <td class="td-name">
                                             {{ $value->email}}
                                             </td>
-                                            <td>{{ $value->city}}</td>
                                             <td>{{ $value->bedrooms}}</td>
-                                            <td>{{ $value->badrooms}}</td>
+                                            <td>{{ $value->type}}</td>
                                         </tr>
                                         @endforeach
                                     </tbody>

@@ -58,6 +58,18 @@
                         <p>Khách hàng thuê</p>
                     </a>
                 </li>
+                <li class="">
+                    <a href="{{ url('/admin/listings-call-me')}}">
+                        <i class="pe-7s-science"></i>
+                        <p>Khách yêu cầu gọi lại</p>
+                    </a>
+                </li>
+                <li class="">
+                    <a href="{{ url('/admin/listings-search')}}">
+                        <i class="pe-7s-science"></i>
+                        <p>Khách kiểm tra giá cho thuê</p>
+                    </a>
+                </li>
             </ul>
         </div>
     </div>

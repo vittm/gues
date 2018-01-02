@@ -15,9 +15,8 @@
                                             <th class="text-center">id</th>
                                             <th >Tên khách hàng</th>
                                             <th class="">Email</th>
-                                            <th> Thành Phố</th>
-                                            <th> Phòng ngủ</th>
-                                            <th> Phòng tắm</th>
+                                            <th class="">Phone</th>
+                                            <th class="">Call Me</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -30,9 +29,12 @@
                                             <td class="td-name">
                                             {{ $value->email}}
                                             </td>
-                                            <td>{{ $value->city}}</td>
-                                            <td>{{ $value->bedrooms}}</td>
-                                            <td>{{ $value->badrooms}}</td>
+                                            <td class="td-name">
+                                                {{ $value->phone}}
+                                            </td>
+                                            <td class="td-name">
+                                            {{ $value->call}}
+                                            </td>
                                         </tr>
                                         @endforeach
                                     </tbody>
