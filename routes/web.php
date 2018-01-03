@@ -24,6 +24,9 @@ Route::group(['prefix' => '{locale}'], function () {
         Route::get('/get-started', function () {
             return view('get-started');
         });
+        Route::get('/how-it-work', function () {
+            return view('how-it-work');
+        });
         Route::get('/get-started/get-info', 'GetStartedController@get_info');
         Route::post('/calculator-{block}-{decoration}-{bedrooms}-{email}', 'HomeController@calculator');
         Route::get('/get-info', 'HomeController@get_info');

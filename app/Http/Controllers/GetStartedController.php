@@ -41,7 +41,7 @@ class GetStartedController extends Controller
     }
     public function listing_search()
     {
-        $customers= DB::table('customers')->where('typeTable','1')->paginate(15);
+        $customers= DB::table('customers')->join('datas','customers.block','datas.id')->where('customers.typeTable','1')->select('customers.*','datas.name_block')->paginate(15);
         return view('admin.listings-search',['customers'=>$customers]);
     }
 }

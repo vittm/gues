@@ -34,8 +34,6 @@ class HomeController extends Controller
     }
     public function calculator($lang,$block,$decoration,$bedrooms,$email)
     {
-        $types = DB::table('rooms')->where([['id_data','=',$block],['count','=',$bedrooms]])->select($decoration)->get();
-
         $db = new Customers;
         $db->block = $block;
         $db->email = $email;
@@ -43,7 +41,8 @@ class HomeController extends Controller
         $db->bedrooms = $bedrooms;
         $db->typeTable = '1';
         $db->save();
-
+        
+        $types = DB::table('rooms')->where([['id_data','=',$block],['count','=',$bedrooms]])->select($decoration)->get();
         if($types != null) {
             foreach ($types as $key => $value) {
                 $result = $value->$decoration;

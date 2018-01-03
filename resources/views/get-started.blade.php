@@ -22,26 +22,21 @@
                 <span class="help-block hidden">{{ __('validation.check_input')}}</span>
               </div>
             </div>
-              <div class="col-md-6">
-                <div class="form-group string required full_property_management_application_postcode"><label class="control-label string required" for="full_property_management_application_postcode"><abbr title="required"></abbr> <span class="translation_missing" title="translation missing: en-uk.hosts.full_property_management_applications.new.postcode, current_city: London">Postcode</span></label><input class="form-control string required" type="text" name="full_property_management_application_postcode" id="full_property_management_application_postcode" /><span class="help-block hidden">{{ __('validation.check_input')}}</span></div>
+            <div class="col-md-6">
+            <div class="form-group select required full_property_management_application_city_name">
+                  <label class="control-label select required" for="full_property_management_application_city_name">
+                  <abbr title="required"></abbr> City</label><select class="form-control select required" name="full_property_management_application_city" id="full_property_management_application_city_name"><option value="">Select a city</option>
+                  <option value="Hồ Chí Minh">Hồ Chí Minh</option>
+                  <option value="Hà Nội">Hà Nội</option>
+                  <option value="Đà Nẵng">Đà Nẵng</option>
+                  <option value="Hội An">Hội An</option>
+                  <option value="Nha Trang">Nha Trang</option>
+                  <option value="Đà Lạt">Đà Lạt</option>
+                  <option value="Sapa">Sapa</option>
+                </select>
+                  <span class="help-block hidden">{{ __('validation.check_input')}}</span>
               </div>
             </div>
-            <div class="row">
-              <div class="col-md-6">
-                <div class="form-group select required full_property_management_application_city_name">
-                    <label class="control-label select required" for="full_property_management_application_city_name">
-                    <abbr title="required"></abbr> City</label><select class="form-control select required" name="full_property_management_application_city" id="full_property_management_application_city_name"><option value="">Select a city</option>
-                    <option value="Hồ Chí Minh">Hồ Chí Minh</option>
-                    <option value="Hà Nội">Hà Nội</option>
-                    <option value="Đà Nẵng">Đà Nẵng</option>
-                    <option value="Hội An">Hội An</option>
-                    <option value="Nha Trang">Nha Trang</option>
-                    <option value="Đà Lạt">Đà Lạt</option>
-                    <option value="Sapa">Sapa</option>
-                  </select>
-                    <span class="help-block hidden">{{ __('validation.check_input')}}</span>
-                </div>
-              </div>
             </div>
             <div class="row">
               <div class="col-md-6">
@@ -60,7 +55,6 @@
                     <option value="9">9</option>
                     <option value="10">10</option>
                 </select>
-                <span class="help-block hidden">{{ __('validation.check_input')}}</span>
                 </div>
             </div>
               <div class="col-md-6">
@@ -78,7 +72,6 @@
                     <option value="9">9</option>
                     <option value="10">10</option>
                 </select>
-                <span class="help-block hidden">{{ __('validation.check_input')}}</span>
                 </div>
               </div>
             </div>

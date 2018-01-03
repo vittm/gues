@@ -121,15 +121,15 @@
               <address>
                   <ul>
 
-                    <li>GuestReady Singapore</li>
+                    <li>{{ __('welcome.nhavin') }}</li>
 
                     <li><a href="tel:+65 31580175">+65 31580175</a></li>
-                    <li><a href="mailto:singapore@guestready.com">singapore@guestready.com</a></li>
+                    <li><a href="mailto:singapore@guestready.com">Vietnam@nhavin.com</a></li>
                     <li>
                       <br/>
                       4 Mohamed Sultan Rd #02-01
                       <br/>
-                      Singapore 238955
+                      Vietnam 238955
 
 
                     </li>
@@ -138,22 +138,22 @@
             </div>
             <div class="col-md-3">
               <ul class="links">
-                <li><a href="/en-sg/team/">About Us</a></li>
-                <li><a href="/en-sg/team/#careers">Careers</a></li>
-                <li><a href="/en-sg/referral-programme/">Referral Programme</a></li>
-                <li><a target="_blank" href="https://www.guestready.com/blog/">Airbnb Tips</a></li>
-                <li><a href="/en-sg/faq/">FAQ</a></li>
-                <li><a href="/en-sg/press/">Press</a></li>
+                <li><a href="#">{{ __('welcome.about') }}</a></li>
+                <li><a href="#">{{ __('welcome.careers') }}</a></li>
+                <li><a href="#">{{ __('welcome.referral') }}</a></li>
+                <li><a target="_blank" href="#">{{ __('welcome.tips') }}</a></li>
+                <li><a href="#">{{ __('welcome.faq') }}</a></li>
+                <li><a href="#">{{ __('welcome.press') }}</a></li>
               </ul>
             </div>
 
             <div class="col-md-5">
               <ul class="links">
-                  <li><a href="/en-uk/airbnb-management-london/">London Airbnb Management</a></li>
-                  <li><a href="/fr-fr/conciergerie-airbnb-paris/">Paris Conciergerie Airbnb</a></li>
-                  <li><a href="/en-hk/airbnb-management-hong-kong/">Hong Kong Airbnb Management</a></li>
-                  <li><a href="/en-sg/airbnb-management-singapore/">Singapore Airbnb Management</a></li>
-                  <li><a href="/en-my/airbnb-management-kuala-lumpur/">Kuala Lumpur Airbnb Management</a></li>
+                  <li><a href="">{{ __('welcome.hcmc') }}</a></li>
+                  <li><a href="">{{ __('welcome.hanoi') }}</a></li>
+                  <li><a href="">{{ __('welcome.danang') }}</a></li>
+                  <li><a href="">{{ __('welcome.sapa') }}</a></li>
+                  <li><a href="">{{ __('welcome.vn') }}</a></li>
               </ul>
             </div>
           </div>
@@ -161,14 +161,14 @@
           <div class="row">
             <div class="col-md-2">
               <div class="social">
-                <a href="https://facebook.com/GuestReadyNow" target="_blank"><img width="32" src="{{ url('assets/fb-04f69d2a1f7730ddf606ce3c3c9976425415f28ab0b6b966b0e487a21b0d8580.svg')}}" alt="Fb" /></a>
-                <a href="https://twitter.com/GuestReadyNow" target="_blank"><img width="32" src="{{ url('assets/twitter-b0d8663a4582b9ba90332a29d159eb1f682b9c9da4c51762fa54865a0edb936e.svg')}}" alt="Twitter" /></a>
-                <a href="https://instagram.com/GuestReadyNow" target="_blank"><img width="32" src="{{ url('assets/ig-7a4999bde408f679412663f3454e7f70104966fa7570f20a2e3ca77bd227c99e.svg')}}" alt="Ig" /></a>
+                <a href="#" target="_blank"><img width="32" src="{{ url('assets/fb-04f69d2a1f7730ddf606ce3c3c9976425415f28ab0b6b966b0e487a21b0d8580.svg')}}" alt="Fb" /></a>
+                <a href="#" target="_blank"><img width="32" src="{{ url('assets/twitter-b0d8663a4582b9ba90332a29d159eb1f682b9c9da4c51762fa54865a0edb936e.svg')}}" alt="Twitter" /></a>
+                <a href="#" target="_blank"><img width="32" src="{{ url('assets/ig-7a4999bde408f679412663f3454e7f70104966fa7570f20a2e3ca77bd227c99e.svg')}}" alt="Ig" /></a>
               </div>
             </div>
 
             <div class="col-md-10">
-              <p>GuestReady is an international property management company managing the top Airbnb apartments in cities across the world</p>
+              <p>{{ __('welcome.declare') }}</p>
             </div>
           </div>
         </div>
@@ -179,10 +179,10 @@
           <div class="row">
             <div class="col-md-6">
               <img alt="GuestReady - Airbnb Property Management in Singapore" src="{{ url('assets/inverse-logo-e13c6a52a4992d5509455fd401e9b4d28848bc8e08affa51c392702a9316e903.png')}}" />
-              <p>© 2017 GUESTREADY. All rights reserved.</p>
+              <p>© 2017 NhaVin.com. All rights reserved</p>
             </div>
             <div class="col-md-6">
-              <p class="right"><a href="/en-sg/terms/">Terms</a> <a href="/en-sg/privacy/">Privacy</a> <a href="/en-sg/cookies/">Cookies</a></p>
+              <p class="right"><a href="/#">{{ __('welcome.terms') }}</a> <a href="#">{{ __('welcome.privacy') }}</a> <a href="#">Cookies</a></p>
             </div>
           </div>
         </div>
@@ -228,13 +228,18 @@
             var block = $('#price_calculator_block').val(),
                 decoration = $('#calculator_decoration').val(),
                 bedrooms = $('#price_calculator_bedrooms_count').val(),
-                email = $('#price_calculator_email').val();
+                email = $('#price_calculator_email').val(),
+                flag = false;
             e.preventDefault();
               $('.new_price_calculator .form-group input, .new_price_calculator .form-group select').each(function() {
                 if ($(this).val() == '') {
                   $(this).parents('.form-group').find('.help-block').removeClass('hidden');
                 }else {
                   $(this).parents('.form-group').find('.help-block').addClass('hidden');
+                  flag = true;
+                }
+              });
+            if(flag == true) {
                   $.ajax({
                     url: "{{url('/')}}/{{Session::get('website_language', config('app.locale'))}}/{{'calculator'}}-"+block+"-"+decoration+"-"+bedrooms+"-"+email+"",
                     type: "POST",
@@ -259,8 +264,6 @@
                       }
                     });
                 }
-              });
-            
             return false;
         });
 

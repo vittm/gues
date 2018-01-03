@@ -98,5 +98,11 @@ return [
     'services' => 'Services',
     'our_homes' => 'Our home',
     'pricing' => 'Pricing',
-    'about' => 'About us'
+    'about' => 'About us',
+    'enter_email' => 'Enter Email Address',
+    'sign_up' => 'Sign up',
+    'nhavin' => 'NhaVin.com Vietnam',
+    'terms' => 'Terms',
+    'privacy' => 'Privacy'
+
 ];

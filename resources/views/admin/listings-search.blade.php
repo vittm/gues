@@ -25,12 +25,12 @@
                                             <td class="td-name">
                                                 {{ $value->id}}
                                             </td>
-                                            <td class="td-number">{{ $value->block}}</td>
+                                            <td class="td-number">{{ $value->name_block}}</td>
                                             <td class="td-name">
                                             {{ $value->email}}
                                             </td>
                                             <td>{{ $value->bedrooms}}</td>
-                                            <td>{{ $value->type}}</td>
+                                            <td>@if ($value->type == 'notdecoration') {{ 'phòng trống' }} @else {{'Phòng không trống'}} @endif </td>
                                         </tr>
                                         @endforeach
                                     </tbody>
