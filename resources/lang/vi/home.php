@@ -30,6 +30,9 @@ return [
     'feel_host_2' => '"Chúng tôi đã cố gắng cho thuê chỗ ở của chúng tôi trên Airbnb trước với sự giúp đỡ của người giúp việc của chúng tôi, nhưng nó trở nên quá phức tạp. Đội ngũ nhân viên của NhàVin.com đã giúp ích rất nhiều trong từng bước, và thu nhập mà chúng tôi tạo ra chiếm phần lớn trong tiền thuê hàng tháng của chúng tôi. "',
     'title_content_host2' => 'Những gì khách hàng nói sau khi được NhàVin.com sắp xếp chổ ở tại nhà của anh An và chị Hoa:',
     'our_stay_wass' => '"Ở tại đây thật tuyệt vời! Nơi này rộng rãi, ấm cúng và được thiết kế rất đẹp. Chúng tôi đặc biệt yêu thích hồ bơi trên tầng hai, một lời chào đón thú vị trong cái nóng của Việt Nam! Nước trái cây ngọt lạnh đang chờ chúng tôi khi chúng tôi nhận nhà là một cảm giác tuyệt vời. "',
-    'rated' => 'Đánh giá'
+    'rated' => 'Đánh giá',
+    'see' => 'Xem các căn hộ cho thuê khác:',
+    'know_somebody' => 'Bạn có nhà cho thuê, hay có ai để giới thiệu?',
+    'thanks' => 'Chúng tôi hứa, họ sẽ cảm ơn bạn'
 
 ];

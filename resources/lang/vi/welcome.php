@@ -98,7 +98,7 @@ return [
     'services' => 'Dịch vụ',
     'our_homes' => 'Nhà cho thuê',
     'pricing' => 'Bảng giá',
-    'about' => 'Về chúng tôi',
+    'abouts' => 'Về chúng tôi',
     'enter_email' => 'Nhập địa chỉ Email',
     'sign_up' => 'Đăng ký',
     'nhavin' => 'NhaVin.com Vietnam',

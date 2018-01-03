@@ -30,5 +30,9 @@ return [
     'fully' => 'Fully transparent',
     'we_are_managing' => 'We are managing your home, so we are completely open and transparent when it comes to sharing updates. From guest booking details to your total generated revenue, everything is accessible in our Host Overview Dashboard.',
     'get_touch' => 'Get in touch with our vacation rental experts',
-    'from_changing' => 'From changing a lightbulb to small fixes, we’ll take care of basic property maintenance tasks and will be on call throughout your guest’s stay. Expect to never worry about little things.'
+    'from_changing' => 'From changing a lightbulb to small fixes, we’ll take care of basic property maintenance tasks and will be on call throughout your guest’s stay. Expect to never worry about little things.',
+    'optimisation'=> 'Listing and price optimisation',
+    'guided_farewell'=> 'Guided farewell',
+    'cleaning' => 'Professional Airbnb cleaning',
+    'linen' => 'Crisp fresh linen & laundry'
 ];

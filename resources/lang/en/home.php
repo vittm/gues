@@ -36,5 +36,8 @@ return [
     'title_content_host2' => 'What guests say after being hosted by NhaVin.com at Mr. An and Mrs. Hoa’s place:',
     'our_stay_wass' => '“Our stay was wonderful! The place is spacious, cozy and very well designed. We especially loved the pool on the second floor, a welcome perk in the Vietnam heat! The cold fresh juice that was waiting for us when 
     we checked in was a nice touch.”',
-    'rated' => 'Rated'
+    'rated' => 'Rated',
+    'see' => 'See our other apartments:',
+    'know_somebody' => 'Have an apartment there, or know somebody who does?',
+    'thanks' => 'We promise, they will thank you'
 ];

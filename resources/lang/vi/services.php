@@ -29,6 +29,10 @@ return [
     'clean' => 'Khu vệ sinh sạch sẽ, khăn trải giường lanh và khăn mềm là sự quan tâm của mọi người. Chúng tôi cung cấp khăn trải giường chất lượng khách sạn cho mỗi khách, vì vậy họ có thể ngủ ngon. Mong đợi đánh giá cao từ khách nghỉ ngơi.',
     'fully' => 'Hoàn toàn minh bạch',
     'we_are_managing' => 'Chúng tôi đang quản lý ngôi nhà của bạn, vì vậy chúng tôi hoàn toàn cởi mở và minh bạch khi chia sẻ cập nhật. Từ chi tiết đặt phòng khách đến tổng doanh thu tạo ra của bạn, mọi thứ đều có thể truy cập trong Bảng điều khiển Tổng quan dành cho Máy chủ lưu trữ của chúng tôi.',
-    'get_touch' => 'Liên hệ ngay với chuyên gia cho thuê phòng trong kỳ nghỉ của bạn'
-
+    'get_touch' => 'Liên hệ ngay với chuyên gia cho thuê phòng trong kỳ nghỉ của bạn',
+    'optimisation'=> 'Tối ưu giá thuê của tin đăng',
+    'guided_farewell'=> 'Khi nói chia tay!',
+    'cleaning' => 'Lau dọn Airbnb chuyên nghiệp',
+    'linen' => 'Khăn sạch và giặt ủi'
+    
 ];

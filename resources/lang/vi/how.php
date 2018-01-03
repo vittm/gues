@@ -29,5 +29,10 @@ return [
     'we_personally' => 'Cá nhân chúng tôi chào đón khách của bạn để giải thích các sắc thái của ngôi nhà của bạn và những viên ngọc quý ẩn giấu trong khu phố của bạn với khách hàng của bạn.',
     'hotel-quanlity' => 'Chất lượng tiêu chuẩn khách sạn với dịch vụ giặt ủi và đồ vệ sinh cá nhân chất lượng cao cho khách hàng của bạn, bổ sung mỗi lần.',
     'we_thoughly'=> 'Chúng tôi làm sạch nhà của bạn sau mỗi lần khách ở, do đó, tài sản của bạn trông sạch sẽ thơm tho, luôn luôn.',
-    'resolve' => 'Giải quyết các vấn đề ngay lập tức thông qua bảo trì trực tiếp của chúng tôi. Cần một bóng đèn thay thế? Chúng tôi làm ngay!'   
+    'resolve' => 'Giải quyết các vấn đề ngay lập tức thông qua bảo trì trực tiếp của chúng tôi. Cần một bóng đèn thay thế? Chúng tôi làm ngay!',   
+    'guest_screening' => 'Kiểm tra khách hàng',
+    'check_in' => 'Check-in và Giao chìa khoá',
+    'linen_toiletries' => 'Đồ dùng và giặt ủi cao cấp',
+    'clearning' => 'Lau dọn và giặt ủi',
+    'maintenance' => 'Bảo duỡng chuyên nghiệp'
 ];

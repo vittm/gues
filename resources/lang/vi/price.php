@@ -48,5 +48,5 @@ return [
     'not_sure' => 'Vẫn chưa biết chọn lựa nào?',
     'get_touch' => 'Hãy liên hệ',
     'discuss' => 'để thảo luận cùng chuyên gia của chúng tôi',
-       
+    'base_plant'=> 'Kế hoạch đơn giản',  
 ];

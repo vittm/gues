@@ -85,7 +85,7 @@
                   <a href="mailto:singapore@guestready.com" class="email">singapore@guestready.com</a>
                 </li>
                 <li class="getstarted-right">
-                  <a class="getstarted-top" href="{{url('/')}}/{{Session::get('website_language', config('app.locale'))}}/{{'get-started'}}">Get Started</a>
+                  <a class="getstarted-top" href="{{url('/')}}/{{Session::get('website_language', config('app.locale'))}}/{{'get-started'}}">{{ __('welcome.start')}}</a>
                 </li>
 
               </ul>
@@ -94,13 +94,13 @@
             <div id="navbar-collapse_menu" class="collapse navbar-collapse">
               <ul class="nav navbar-nav navbar-right">
                 <li class="hidden-sm hidden-md hidden-lg"><a href="/">Home</a></li>
-                <li class=""><a href="how-it-works.html">{{ __('welcome.how_it_work')}}</a></li>
-                <li class=""><a href="services.html">{{ __('welcome.services')}}</a></li>
+                <li class=""><a href="{{url('/')}}/{{Session::get('website_language', config('app.locale'))}}/{{'how-it-work'}}">{{ __('welcome.how_it_work')}}</a></li>
+                <li class=""><a href="{{url('/')}}/{{Session::get('website_language', config('app.locale'))}}/{{'services'}}">{{ __('welcome.services')}}</a></li>
                   <li class="">
-                    <a href="homes.html">{{ __('welcome.our_homes')}}</a>
+                    <a href="{{url('/')}}/{{Session::get('website_language', config('app.locale'))}}/{{'our-home'}}">{{ __('welcome.our_homes')}}</a>
                   </li>
-                <li class=""><a href="pricing.html">{{ __('welcome.pricing')}}</a></li>
-                <li class=""><a href="about-us.html">{{ __('welcome.about')}}</a></li>
+                <li class=""><a href="{{url('/')}}/{{Session::get('website_language', config('app.locale'))}}/{{'pricing'}}">{{ __('welcome.pricing')}}</a></li>
+                <li class=""><a href="{{url('/')}}/{{Session::get('website_language', config('app.locale'))}}/{{'about-us'}}">{{ __('welcome.abouts')}}</a></li>
                 <li><a class="nav-item-inverted" href="{{url('/')}}/{{Session::get('website_language', config('app.locale'))}}/{{'get-started'}}">{{ __('welcome.start')}}</a></li>
               </ul>
             </div>
@@ -188,41 +188,6 @@
         </div>
       </div>
     </footer>
-    <div class="modal fade" id="calculatorModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-      </div>
-      <div class="modal-body">
-        <div class='price-calculator popup'>
-  <h2 class='h3 header'><img src="{{ url('assets/wallet_icon-6937ad45a2530a6d973ea5a696d1ab19770533e8928ad628fe5614fe45bb43d0.png')}}" alt="Wallet icon" />Find out how much your property can make for you on Airbnb:</h2>
-  <form novalidate="novalidate" class="simple_form new_price_calculator" id="new_price_calculator" action="/en-sg/price_calculator/?landing=true&amp;wrapper=popup" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" />
-
-      <div class="form-group string required price_calculator_address"><label class="control-label string required" for="price_calculator_address"><abbr title="required"></abbr> Address</label><div class="input-group">
-        <div class="input-group-addon shortcut"><i class="fa fa-map-marker"></i></div>
-        <input class="string required form-control" placeholder="Address" type="text" name="price_calculator[address]" id="price_calculator_address" />
-</div></div>        <div class="form-group hidden price_calculator_lat"><input class="form-control hidden" geo="lat" type="hidden" name="price_calculator[lat]" id="price_calculator_lat" /></div>        <div class="form-group hidden price_calculator_lng"><input class="form-control hidden" geo="lng" type="hidden" name="price_calculator[lng]" id="price_calculator_lng" /></div>        <div class="form-group hidden price_calculator_formatted_address"><input class="form-control hidden" geo="formatted_address" type="hidden" name="price_calculator[formatted_address]" id="price_calculator_formatted_address" /></div>        <div class="form-group hidden price_calculator_route"><input class="form-control hidden" geo="route" type="hidden" name="price_calculator[route]" id="price_calculator_route" /></div>        <div class="form-group hidden price_calculator_street_number"><input class="form-control hidden" geo="street_number" type="hidden" name="price_calculator[street_number]" id="price_calculator_street_number" /></div>        <div class="form-group hidden price_calculator_postal_code"><input class="form-control hidden" geo="postal_code" type="hidden" name="price_calculator[postal_code]" id="price_calculator_postal_code" /></div>        <div class="form-group hidden price_calculator_country"><input class="form-control hidden" geo="country" type="hidden" name="price_calculator[country]" id="price_calculator_country" /></div>
-      <div class="form-group string required price_calculator_bedrooms_count"><label class="control-label string required" for="price_calculator_bedrooms_count"><abbr title="required"></abbr> Bedrooms</label><div class="input-group">
-        <div class="bethrooms-counter-visible">
-          <div class="input-group-addon shortcut"><i class="fa fa-bed"></i></div>
-          <input class="string required readonly form-control" readonly="readonly" placeholder="Bedrooms" type="text" name="price_calculator[bedrooms_count]" id="price_calculator_bedrooms_count" />
-           <div class="input-group-addon bedrooms-counter">
-             <a class="up" href="#">+</a>
-             <a class="down" href="#">-</a>
-           </div>
-         </div>
-</div></div>
-      <div class="form-group email required price_calculator_email"><label class="control-label email required" for="price_calculator_email"><abbr title="required"></abbr> Email address</label><div class="input-group">
-        <div class="input-group-addon shortcut"><i class="fa fa-envelope-o"></i></div>
-        <input class="string email required form-control" placeholder="Email address" type="email" name="price_calculator[email]" id="price_calculator_email" /></div></div>
-      <input type="submit" name="commit" value="Calculate" data-disable-with="Calculating" data-disable-with="Calculating" class="btn btn-primary" />
-</form></div>
-
-      </div>
-    </div>
-  </div>
-</div>
 <script>
         $('.calculate_clicks').click(function(e){
             var block = $('#price_calculator_block').val(),

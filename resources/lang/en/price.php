@@ -41,6 +41,7 @@ return [
     'fixed_income' => 'FIXED INCOME',
     'adefine' => 'A defined',
     'amount' => 'amount',
+    'base_plant'=> 'Basic Plan',
     'your_property' => 'Based on your property',
     'luxury_lien' => 'Luxury hotel quality linen',
     'our_unique' => 'Our unique pricing strategy helps us understand the value of your property on Airbnb. We are confident to provide you with a fixed rent for each day that the apartment is let out.',

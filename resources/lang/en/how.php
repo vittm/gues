@@ -15,7 +15,7 @@ return [
     'we_get' => 'We get your home NhaVin.com for Airbnb',
     'steps' => 'in three simple steps',
     'we_get_small' => 'We get your home NhaVin.com in three simple steps',
-    'meet_our_real' => 'Gặp chuyên gia của chúng tôi Meet our Real Estate experts',
+    'meet_our_real' => 'Meet our Real Estate experts',
     'during' => 'During our first meeting at your place, we will get to know your property and give you a precise estimation of your earnings. We’ll discuss your schedule, special needs and any other things that are important to ensure that your vacation rental runs smoothly.',
     'onboarding' => 'Onboarding & Listing Creation',
     'our_photo' => 'Our photographer will capture magazine-worthy photos to showcase the best that your home has to offer. We’ll concoct a catchy name, compelling description, and make sure your listing is positioned to capture a would-be guest’s imagination across platforms like Airbnb, HomeAway, etc.',
@@ -29,7 +29,10 @@ return [
     'we_personally' => 'We personally welcome your guests to explain the nuances of your home and the hidden gems of your neighborhood to your guests.',
     'hotel-quanlity' => 'Hotel-quality linen and high-quality toiletries for your guests, replenished each time.',
     'we_thoughly'=> 'We thoroughly clean your home after each stay, so your property looks spick and span, always.',
-    'resolve' => 'Resolve issues in no time through our on-call maintenance. Need a bulb replaced? We’re on it! '   
-    
-
+    'resolve' => 'Resolve issues in no time through our on-call maintenance. Need a bulb replaced? We’re on it! ',   
+    'guest_screening' => 'Guest screening',
+    'check_in' => 'Check-in and key exchange',
+    'linen_toiletries' => 'Premium linen and toiletries',
+    'clearning' => 'Cleaning and laundry',
+    'maintenance' => 'Professional maintenance'
 ];
