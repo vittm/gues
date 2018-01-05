@@ -67,28 +67,28 @@
     <img class="img-responsive" src="{{ url('/assets/price.png')}}" alt="Price ok">
     <div class="content">
       <div class="header">
-        <div>Nice! You could earn   <b class="price">£829</b>
- per month
-</div> renting on short-let services like Airbnb.
+        <div>{{ __('welcome.nice_earn')}} {{__('welcome.about_price')}} <b class="price">£829</b>
+        {{ __('welcome.per_month')}}
+</div> {{ __('welcome.service_like')}}
       </div>
-      <p class="note">approximate based on average earnings</p>
+      <p class="note">{{ __('welcome.earning')}}</p>
     </div>
   </div>
 </div>
 <div class="price-calculator-help hidden">
   <div class="container">
-    <h3>We can help.</h3>
-<div>GuestReady provides Airbnb management services to take the hassle out of hosting.</div>
-<div>We manage your space, welcome guests and keep it clean, while helping you increase your rental income.</div>
+    <h3>{{ __('welcome.we_can_help')}}</h3>
+<div>{{ __('welcome.prodives')}}</div>
+<div>{{ __('welcome.manages_space')}}</div>
 <br>
-<div>Want to know more? Find out about our <a href="/management">Airbnb property management services</a> or leave your phone number below for an introduction.</div>
+<div>{{ __('welcome.know_1')}}<a href="/management">{{ __('welcome.know_2')}}</a>{{ __('welcome.know_3')}}</div>
 
     <form novalidate="novalidate" class="simple_form new_price_calculator_call" id="new_price_calculator_call" action="{{url('/')}}/{{Session::get('website_language', config('app.locale'))}}/{{'get-info'}}" method="get">
     {{ csrf_field() }}
      <div class="row">
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
         <div class="form-group string required price_calculator_call_full_name"><label class="control-label string required" for="price_calculator_call_full_name">
-          <abbr title="required"></abbr> Full Name</label>
+          <abbr title="required"></abbr>{{ __('welcome.full_name')}}</label>
           <input class="form-control string required" type="text" name="price_calculator_call_full_name" id="price_calculator_call_full_name">
           <span class="help-block hidden">{{ __('validation.check_input')}}</span>
         </div>
@@ -103,14 +103,14 @@
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
         <div class="form-group select required price_calculator_call_preference"><label class="control-label select required" for="price_calculator_call_preference">
           <abbr title="required"></abbr> Call Me</label><select class="form-control select required" name="price_calculator_call_preference" id="price_calculator_call_preference"><option selected="selected" value="asap">asap</option>
-        <option value="morning">morning</option>
-        <option value="afternoon">afternoon</option>
-        <option value="evening">evening</option></select>
+        <option value="{{ __('welcome.morning')}}">{{ __('welcome.morning')}}</option>
+        <option value="{{ __('welcome.afternoon')}}">{{ __('welcome.afternoon')}}</option>
+        <option value="{{ __('welcome.evening')}}">{{ __('welcome.evening')}}</option></select>
       </div>
       </div>
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
         <div class="form-group tel required price_calculator_call_phone"><label class="control-label tel required" for="price_calculator_call_phone">
-          <abbr title="required"></abbr> Phone Number</label>
+          <abbr title="required"></abbr> {{ __('welcome.phone')}}</label>
           <input class="form-control string tel required" type="tel" name="price_calculator_call_phone" id="price_calculator_call_phone">
           <span class="help-block hidden">{{ __('validation.check_input')}}</span>
         </div>
@@ -122,8 +122,7 @@
       </div>
     </div>
 </form>
-    <p>In this call we'll discuss the potential of your property on websites like Airbnb, and how GuestReady’s premium Airbnb management service can help you increase your rental income. We will ask you some questions to get to know your property a little better, and set up a meeting to get your listing up and running.</p>
-
+    <p>{{ __('welcome.know_4')}}</p>
   </div>
 </div>
 
@@ -132,9 +131,9 @@
     <div class="bg-stat"></div>
     <div class="container text-center">
       <p class="section-title">{{ __('welcome.txt_agency_for_managing') }}</p>
-      <p class="section-title section-title--not-result hidden">Không tìm thấy kết quả</p>
+      <p class="section-title section-title--not-result hidden">{{ __('welcome.not_found')}}</p>
       <div class="divider"></div>
-      <p class="basic">{{ __('welcome.txt_we_manage')}} <span>{{ __('welcome.txt_over_100_properties')}} </span> {{ __('welcome.txt_helping_owners')}}  </p>
+      <p class="basic">{{ __('welcome.txt_we_manage')}} <span> {{ __('welcome.txt_over_100_properties')}} </span> {{ __('welcome.txt_helping_owners')}}  </p>
       <div class="props">
         <div class="row">
           <div class="col-md-4 col-sm-12">
@@ -434,7 +433,7 @@
         <div class="col-md-10 col-md-offset-1">
           <div class="refer">
             <h4>{{ __('welcome.calling') }}<br></h4>
-            <a class="btn btn-orange" href="#">{{ __('welcome.refer_a_host') }}</a>
+            <a class="btn btn-orange" href="{{url('/')}}/{{Session::get('website_language', config('app.locale'))}}/{{'get-started'}}">{{ __('welcome.refer_a_host') }}</a>
           </div>
         </div>
       </div>
@@ -446,7 +445,7 @@
       <div class="row">
         <div class="col-md-12">
           <div id="mc_embed_signup">
-            <form action="//GuestReady.us13.list-manage.com/subscribe/post?u=e5cb2dca535631d35814c76ea&amp;id=798f8399da" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+            <form action="#" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
               <h4>{{ __('welcome.newsletter') }}<span>{{ __('welcome.newsletters') }}</span></h4>
               <input type="email" name="EMAIL" placeholder="{{ __('welcome.enter_email') }}" id="mce-EMAIL">
               <input type="submit" id="mc-embedded-subscribe" value="{{ __('welcome.sign_up') }}">

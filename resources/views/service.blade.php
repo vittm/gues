@@ -151,7 +151,7 @@
       <div class="box-tr">
         <div class="divider small"></div>
         <h3 class="sub-title-block">
-        {{ __('welcome.roperty') }}
+        {{ __('welcome.property') }}
         </h3>
         <p>{{ __('services.from_changing') }}</p>
       </div>

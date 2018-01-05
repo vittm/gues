@@ -34,5 +34,5 @@ return [
     'optimisation'=> 'Listing and price optimisation',
     'guided_farewell'=> 'Guided farewell',
     'cleaning' => 'Professional Airbnb cleaning',
-    'linen' => 'Crisp fresh linen & laundry'
+    'linen' => 'Crisp fresh linen & laundry',
 ];

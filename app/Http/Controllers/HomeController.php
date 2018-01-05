@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use DB;
 use App;
 use App\Datas;
 use App\Rooms;
 use App\Customers;
 use Session;
+use Request;
+
 
 class HomeController extends Controller
 {
@@ -30,6 +31,10 @@ class HomeController extends Controller
     public function index()
     {
         $types = DB::table('datas')->get();
+        $language = Request::segment(1);
+        if($language !== 'en' || $language !== 'vi' && Session::get('website_language') != null ) {
+            Session::put('website_language', config('app.locale'));
+        }
         return view('welcome',['types'=>$types]);
     }
     public function calculator($lang,$block,$decoration,$bedrooms,$email)
@@ -52,7 +57,7 @@ class HomeController extends Controller
             return false;
         }
     }
-    public function get_info(Request $request){
+    public function get_info(\Illuminate\Http\Request $request){
         $value = $request->all();
 
         $db = new Customers;

@@ -45,7 +45,7 @@
                             <p>{{ __('price.from') }}</p><strong>20%</strong><p>{{ __('price.revenues') }}</p>
                           </div>
                         </div>
-                        <h4>Includes:</h4>
+                        <h4>{{ __('price.include') }}</h4>
           <ul>
             <li>{{ __('price.dynamic') }}</li>
             <li>{{ __('price.muitichannel') }}</li>
@@ -55,7 +55,7 @@
             <li>{{ __('price.maintenance') }}</li>
             <li>{{ __('price.support24') }}</li>
           </ul>
-          <h4>{{ __('price.and') }}And</h4>
+          <h4>{{ __('price.and') }}</h4>
           <h6 class="basic-package">{{ __('price.all_services') }}<br> {{ __('price.include_in') }}<br> {{ __('price.base_plant') }}</h6>
           <!-- <ul>
             <li>Listing creation and optimisation </li>
@@ -69,7 +69,7 @@
           
                         <h5>{{ __('price.most_populor') }}</h5>
                       </div>
-                      <a class="btn btn-primary" href="/en-sg/hosts/full_property_management_applications/new/">{{ __('welcome.start') }}Get started</a>
+                      <a class="btn btn-primary" href="/en-sg/hosts/full_property_management_applications/new/">{{ __('welcome.start') }}</a>
                     </div>
                   </div>
                   <div class="col-md-4 text-center ">
@@ -81,7 +81,7 @@
                             <h6>{{ __('price.adefine') }}<br/>{{ __('price.amount') }}</h6><p>{{ __('price.your_property') }}</p>
                           </div>
                         </div>
-                        <h4>{{ __('price.sign_up') }}</h4>
+                        <h4>{{ __('price.include') }}</h4>
           <ul>
             <li>{{ __('price.price_optimize') }}n</li>
             <li>{{ __('price.communication') }}</li>

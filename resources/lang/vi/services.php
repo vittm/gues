@@ -33,6 +33,6 @@ return [
     'optimisation'=> 'Tối ưu giá thuê của tin đăng',
     'guided_farewell'=> 'Khi nói chia tay!',
     'cleaning' => 'Lau dọn Airbnb chuyên nghiệp',
-    'linen' => 'Khăn sạch và giặt ủi'
-    
+    'linen' => 'Khăn sạch và giặt ủi',
+    'from_changing'=> 'Từ việc thay đổi bóng đèn tới các sửa chữa nhỏ, chúng tôi sẽ đảm bảo các nhiệm vụ bảo trì cơ bản cơ bản và sẽ được thực hiện sau cuộc gọi trong suốt thời gian lưu trú của khách. Mong đợi để không bao giờ lo lắng về những điều nhỏ.'
 ];

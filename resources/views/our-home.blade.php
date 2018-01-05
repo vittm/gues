@@ -164,12 +164,83 @@
 <img src="{{ url('assets/v2/singapore_gallery_home_08-44855a4a240fe4c6615f88f0f5e253f57896d4b8442a7976fc9bf09a40754501.jpg')}}" alt="Singapore gallery home 08" />
 </div>
 </div>
-
-<p class="small mini">{{ __('home.know_somebody')}}</p>
-<a class="btn btn-orange" href="/en-sg/referral-programme/">{{ __('welcome.refer_a_host')}}</a>
-<h6 class="mini">{{ __('home.thanks')}}</h6>
 </div>
 </div>
+<section class="management-section">
+    <div class="container">
+      <p class="section-title text-center">{{ __('welcome.take_care_detail') }}</p>
+      <div class="divider"></div>
+      <div class="row faq">
+        <div class="col-md-6 block">
+          <p>{{ __('welcome.argument1') }}
+</p>
+          <a class="faq" href="#" data-faq="faq1">
+            <img src="{{ url('assets/v2/qs-dbe8653072f6d8640bf90286718a9c0b4170755e560e8fc466b945bf6a61c12e.png')}}" alt="Qs" />
+            <span>{{ __('welcome.q1') }}</span>
+          </a>
+          <div class="answ answ-opened" data-faq="faq1"><p>{{ __('welcome.a1') }}</p> <ol>
+        <li><strong>{{ __('welcome.a11') }}</strong>{{ __('welcome.a111') }}</li>
+        <li><strong>{{ __('welcome.a12') }}</strong>{{ __('welcome.a121') }}</li>
+</ol>
+</div>
+          <a class="faq" href="#" data-faq="faq2">
+            <img src="{{ url('assets/v2/qs-dbe8653072f6d8640bf90286718a9c0b4170755e560e8fc466b945bf6a61c12e.png')}}" alt="Qs" />
+            <span>{{ __('welcome.q3') }}</span>
+          </a>
+          <div class="answ answ-opened" data-faq="faq2"><p></p>
+</div>
+        </div>
+        <div class="col-md-6 block">
+          <p>{{ __('welcome.argument2') }}
+</p>
+          <a class="faq" href="#" data-faq="faq3">
+            <img src="{{ url('assets/v2/qs-dbe8653072f6d8640bf90286718a9c0b4170755e560e8fc466b945bf6a61c12e.png')}}" alt="Qs" />
+            <span>{{ __('welcome.q2') }}</span>
+          </a>
+          <div class="answ answ-opened" data-faq="faq3"><p>{{ __('welcome.a2') }}.</p>
+</div>
+          <a class="external-link" href="/en-sg/faq/">
+            <img src="{{ url('assets/v2/qs-dbe8653072f6d8640bf90286718a9c0b4170755e560e8fc466b945bf6a61c12e.png')}}" alt="Qs" />
+            <span>{{ __('welcome.q4') }}</span>
+</a>        </div>
+      </div>
+    </div>
+  </section>
 
+  <section class="refer-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+          <div class="refer">
+            <h4>{{ __('welcome.calling') }}<br></h4>
+            <a class="btn btn-orange" href="{{url('/')}}/{{Session::get('website_language', config('app.locale'))}}/{{'get-started'}}">{{ __('welcome.refer_a_host') }}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="subscribe-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div id="mc_embed_signup">
+            <form action="#" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+              <h4>{{ __('welcome.newsletter') }}<span>{{ __('welcome.newsletters') }}</span></h4>
+              <input type="email" name="EMAIL" placeholder="{{ __('welcome.enter_email') }}" id="mce-EMAIL">
+              <input type="submit" id="mc-embedded-subscribe" value="{{ __('welcome.sign_up') }}">
+
+              <div id="mce-responses" class="clear">
+                <div class="response" id="mce-error-response" style="display:none"></div>
+                <div class="response" id="mce-success-response" style="display:none"></div>
+              </div><!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+
+              <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_2d9367408e0f70bb0fef9928b_457cfa8179" tabindex="-1" value=""></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
       
 @endsection       
