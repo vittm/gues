@@ -56,7 +56,7 @@
 <!-- features -->
 <div class="section-features">
 <div class="container text-center">
-  <h2 class="site-title">{{ __('how.thanks') }}</h2>
+  <h2 class="site-title">{{ __('how.title') }}</h2>
   <div class="divider"></div>
   <div class="row">
     <div class="col-md-4 col-sm-4 text-center">

@@ -15,7 +15,7 @@ return [
     'we_get' => 'Chúng tôi nhận được nhà của bạn cho Airbnb',
     'steps' => 'trong 3 bước',
     'we_get_small' => 'Chúng tôi nhận nhà bạn trong 3 buớc đơn giản',
-    'meet_our_real' => 'Gặp chuyên gia của chúng tôi Meet our Real Estate experts',
+    'meet_our_real' => 'Gặp chuyên gia của chúng tôi',
     'during' => 'Trong cuộc họp đầu tiên tại địa điểm của bạn, chúng tôi sẽ tìm hiểu tài sản của bạn và cho bạn dự toán chính xác thu nhập từ tài sản của bạn. Chúng tôi sẽ thảo luận về lịch biểu của bạn, nhu cầu đặc biệt và bất kỳ điều gì khác quan trọng để đảm bảo rằng việc cho thuê của bạn chạy trơn tru.',
     'onboarding' => 'Nhận nhà & Tạo tin đăng',
     'our_photo' => 'Nhiếp ảnh gia của chúng tôi sẽ chụp những bức ảnh đẹp như tạp chí để giới thiệu những gì tốt nhất mà ngôi nhà của bạn cung cấp. Chúng tôi sẽ tạo ra một cái tên hấp dẫn, mô tả hấp dẫn và đảm bảo rằng tin đăng của bạn được định vị để nắm bắt được trí tưởng tượng của khách hàng tiềm năng qua các nền tảng như Airbnb, Booking,...',
@@ -34,5 +34,6 @@ return [
     'check_in' => 'Check-in và Giao chìa khoá',
     'linen_toiletries' => 'Đồ dùng và giặt ủi cao cấp',
     'clearning' => 'Lau dọn và giặt ủi',
-    'maintenance' => 'Bảo duỡng chuyên nghiệp'
+    'maintenance' => 'Bảo duỡng chuyên nghiệp',
+    'title' => "Chúng tôi quan tâm tới mọi thứ"
 ];

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Airbnb Management Service in Singapore | GuestReady</title>
+    <title>Airbnb Management Service in VietNam | Nhà Vin</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,7 +18,6 @@
 <link href='https://fonts.googleapis.com/css?family=Fira+Sans:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link href='https://fonts.googleapis.com/css?family=Karla' rel='stylesheet' type='text/css'>
-<link rel="canonical" href="https://www.guestready.com/en-sg/airbnb-management-singapore/" />
 <script src="https://maps.googleapis.com/maps/api/js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyCaNb4CAbr82gwqQkhU4WgJ3VPQN3VaTiI"></script>
 <!-- TrustBox script -->
@@ -52,7 +51,7 @@
         <div class="row">
           <div class="col-md-3">
             <a class="navbar-brand" href="{{url('/')}}/{{Session::get('website_language', config('app.locale'))}}">
-                <img alt="GustReady - Airbnb Management Service in Singapore" src="{{ url('assets/v2/logo-282448512b55a06e9f4e7077cca2c5c09b0e6978eee6a7129d796e1cacd59049.png')}}" />
+                <img alt="GustReady - Airbnb Management Service in VietNam" src="{{ url('assets/v2/logo-282448512b55a06e9f4e7077cca2c5c09b0e6978eee6a7129d796e1cacd59049.png')}}" />
 </a>          </div>
           <div class="col-md-9">
             <div>
@@ -82,12 +81,11 @@
                     </li>
                 </li>
                 <li>
-                  <a href="mailto:singapore@guestready.com" class="email">singapore@guestready.com</a>
+                  <a href="mailto:singapore@guestready.com" class="email">vietnam@nhavin.com</a>
                 </li>
                 <li class="getstarted-right">
                   <a class="getstarted-top" href="{{url('/')}}/{{Session::get('website_language', config('app.locale'))}}/{{'get-started'}}">{{ __('welcome.start')}}</a>
                 </li>
-
               </ul>
             </div>
 
@@ -124,7 +122,7 @@
                     <li>{{ __('welcome.nhavin') }}</li>
 
                     <li><a href="tel:+65 31580175">+65 31580175</a></li>
-                    <li><a href="mailto:singapore@guestready.com">Vietnam@nhavin.com</a></li>
+                    <li><a href="mailto:vietnam@nhavin.com">vietnam@nhavin.com</a></li>
                     <li>
                       <br/>
                       4 Mohamed Sultan Rd #02-01

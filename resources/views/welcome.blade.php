@@ -6,8 +6,8 @@
       <p class="h1">{{ __('welcome.welcome')}}</p>
       <h1 class="h2">{{ __('welcome.txt_property_management')}}</h1>
 
-      <h3 class="h3 subheading2">Your trusted partner for <a href='/en-uk/airbnb-management-singapore/'>Airbnb Management in London</a></h3>
-      <h3 class="h3 subheading2">Votre partenaire de confiance pour la <a href='/fr-fr/airbnb-management-singapore/'>Conciergerie Airbnb à Paris</a></h3>
+      <h3 class="h3 subheading2">Your trusted partner for <a href='#'>Airbnb Management in London</a></h3>
+      <h3 class="h3 subheading2">Votre partenaire de confiance pour la <a href='#'>Conciergerie Airbnb à Paris</a></h3>
 
       <div class="divider"></div>
 
@@ -81,8 +81,7 @@
 <div>{{ __('welcome.prodives')}}</div>
 <div>{{ __('welcome.manages_space')}}</div>
 <br>
-<div>{{ __('welcome.know_1')}}<a href="/management">{{ __('welcome.know_2')}}</a>{{ __('welcome.know_3')}}</div>
-
+  <div>{{ __('welcome.know_1')}}<a href="#">{{ __('welcome.know_2')}}</a>{{ __('welcome.know_3')}}</div>
     <form novalidate="novalidate" class="simple_form new_price_calculator_call" id="new_price_calculator_call" action="{{url('/')}}/{{Session::get('website_language', config('app.locale'))}}/{{'get-info'}}" method="get">
     {{ csrf_field() }}
      <div class="row">
@@ -151,7 +150,7 @@
         </div>
       </div>
       <div class="row clearfix"></div>
-      <a class="btn btn-large btn-primary" href="/en-sg/hosts/full_property_management_applications/new/">{{ __('welcome.start') }}</a>
+      <a class="btn btn-large btn-primary" href="#">{{ __('welcome.start') }}</a>
       <!-- <a class="btn btn-large btn-primary">Get Started</a> -->
       <p class="small">{{ __('welcome.stars') }}</p>
       <img class="no-filters" src="{{ url('assets/v2/stars-eb92a16d1f0634049023974cbc9205e26df201bb5aa2dad52c7697d4f4024064.png')}}" alt="Stars" />
@@ -195,10 +194,10 @@
             <a class="btn btn-primary" href="#price-calc">{{ __('welcome.find_out') }}</a>
           </div>
           <div class="col-md-4">
-            <a class="btn btn-primary" href="/en-sg/services/">{{ __('welcome.discover') }}</a>
+            <a class="btn btn-primary" href="#">{{ __('welcome.discover') }}</a>
           </div>
           <div class="col-md-4">
-            <a class="btn btn-primary" href="/en-sg/hosts/full_property_management_applications/new/">{{ __('welcome.contact') }}</a>
+            <a class="btn btn-primary" href="#">{{ __('welcome.contact') }}</a>
           </div>
         </div>
       </div>
@@ -214,47 +213,47 @@
       <div class="row">
         <div class="col-md-10 col-md-offset-1">
           <div class="col-md-4">
-            <a href="/en-sg/services/#listing-creation">
+            <a href="{{url('/')}}/{{Session::get('website_language', config('app.locale'))}}/{{'services#listing-creation'}}">
               <img alt="GuestReady will create an attractive listing on Airbnb for you" src="{{ url('assets/v2/s01-752a5cbcf7011d6d626491b23f175bad7389bb2789e788e4bfb169bec1ac7f23.png')}}" />
               <span>{{ __('welcome.listing') }}</span>
 </a>          </div>
           <div class="col-md-4">
-            <a href="/en-sg/services/#professional-photography">
+            <a href="{{url('/')}}/{{Session::get('website_language', config('app.locale'))}}/{{'services#professional-photography'}}">
               <img alt="A professional photographer will take photos of your Singapore home" src="{{ url('assets/v2/s02-79df7662703feab0b6c5533c1a05eae045dcf91c2b76068be5686a92a702f784.png')}}" />
               <span>{{ __('welcome.photography') }}</span>
 </a>          </div>
           <div class="col-md-4">
-            <a href="/en-sg/services/#concierge-service">
+            <a href="{{url('/')}}/{{Session::get('website_language', config('app.locale'))}}/{{'services#concierge-service'}}">
               <img alt="Our concierges are available around the clock in Singapore" src="{{ url('assets/v2/s03-aff046514f7a1a7cef0f91083830cf0f66926f36de81524bf7f034d6c78fd4d1.png')}}" />
               <span>{{ __('welcome.concierge') }}</span>
 </a>          </div>
           <div class="col-md-4">
-            <a href="/en-sg/services/#guest-communication">
+            <a href="{{url('/')}}/{{Session::get('website_language', config('app.locale'))}}/{{'services#guest-communication'}}">
               <img alt="Rent your Singapore Airbnb to the most respectable guests" src="{{ url('assets/v2/s04-0886c39aa9f3ff3c4bfb13757d91877cdca067a8932e9931a1331d1ac440c91d.png')}}" />
               <span>{{ __('welcome.guest') }}</span>
 </a>          </div>
           <div class="col-md-4">
-            <a href="/en-sg/services/#personal-welcome">
+            <a href="{{url('/')}}/{{Session::get('website_language', config('app.locale'))}}/{{'services#personal-welcome'}}">
               <img alt="Personal welcome and key exchange for your guests" src="{{ url('assets/v2/s05-99948da773ed614ef6ce7066f81ab0c76dbcef23dc1018fa41d2962fc6c5332e.png')}}" />
               <span>{{ __('welcome.key') }}</span>
 </a>          </div>
           <div class="col-md-4">
-            <a href="/en-sg/services/#price-optimisation">
+            <a href="{{url('/')}}/{{Session::get('website_language', config('app.locale'))}}/{{'services#price-optimisation'}}">
               <img alt="Price optimisation for better yield management" src="{{ url('assets/v2/s06-311864ca6015e6ad17891d1cbe4949d0cec3e788008b07ac68ff7fb0ee7628e5.png')}}" />
               <span>{{ __('welcome.price') }}</span>
 </a>          </div>
           <div class="col-md-4">
-            <a href="/en-sg/services/#premium-amenities">
+            <a href="{{url('/')}}/{{Session::get('website_language', config('app.locale'))}}/{{'services#premium-amenities'}}">
               <img alt="Toiletries and essentials for your Singapore guests" src="{{ url('assets/v2/s07-5a067c1f80ec082a6724949f98de26bc7b6473d02d0e7e37771d9aa358c014b2.png')}}" />
               <span>{{ __('welcome.amenties') }}</span>
 </a>          </div>
           <div class="col-md-4">
-            <a href="/en-sg/services/#cleaning-services">
+            <a href="{{url('/')}}/{{Session::get('website_language', config('app.locale'))}}/{{'services#cleaning-services'}}">
               <img alt="Cleaning and fresh linen for your Singapore Airbnb" src="{{ url('assets/v2/s08-8568a6c919fc15e89e6dd203007eec7d0ecb958b98bbdc67f25566b8c8bf5e53.png')}}" />
               <span>{{ __('welcome.cleaning') }}</span>
 </a>          </div>
           <div class="col-md-4">
-            <a href="/en-sg/services/#property-maintenance">
+            <a href="{{url('/')}}/{{Session::get('website_language', config('app.locale'))}}/{{'services#property-maintenance'}}">
               <img alt="Small repairs and on ground management of your Airbnb in Singapore" src="{{ url('assets/v2/s09-bdd91133ab2e31565620c0977ce348059eaa342c478e6f5d77e410d12a6e6837.png')}}" />
               <span>{{ __('welcome.property') }}</span>
 </a>          </div>
@@ -325,7 +324,7 @@
                   <div class="meta">
                     <img alt="David is a happy GuestReady Singapore host" src="{{ url('assets/v2/singapore_owner_1-fd709fd018953c37a1bc039012e62c75fdfbe7ea0cd1018dff4905d8de3d2195.jpg')}}" />
                     <p>David Chong</p>
-                    <a href="/en-sg/homes/#home1">Tiong Bahru</a>
+                    <a href="#">Tiong Bahru</a>
                   </div>
                 </div>
                 <div data-card-id="1" class="card card-1">
@@ -335,7 +334,7 @@
                   <div class="meta">
                     <img alt="Lucas &amp; Christine are happy GuestReady Singapore hosts" src="{{ url('assets/v2/singapore_owner_2-990272791b5b0c0e70d6c90c2987cd6b00f08ee0a88d5021a2a84dc8ee568c43.jpg')}}" />
                     <p>Lucas and Christine</p>
-                    <a href="/en-sg/homes/#home2">River Valley</a>
+                    <a href="#">River Valley</a>
                   </div>
                 </div>
                 <div data-card-id="2" class="card card-2">
@@ -345,7 +344,7 @@
                   <div class="meta">
                     <img alt="Jenny is a happy GuestReady Singapore host" src="{{ url('assets/v2/singapore_owner_3-2803697ab8339919bcb3f73dc6e47b2662fc80d33e1a65cb2d951710c80377af.jpg')}}" />
                     <p>Jenny Zhang</p>
-                    <a href="/en-sg/homes/#home3">River Valley</a>
+                    <a href="#">River Valley</a>
                   </div>
                 </div>
               </div>
@@ -360,19 +359,19 @@
                 <p>“Thanks to GuestReady I can profit off the apartments I own, without having to worry about checking in guests and arranging a helper to clean the apartment every time. GuestReady takes care of everything, so I have time for things that I enjoy doing.”
 </p>
                 <h5>David Chong</h5>
-                <a href="/en-sg/homes/#home1">Tiong Bahru</a>
+                <a href="#">Tiong Bahru</a>
               </div>
               <div data-card-id="1" class="card-desc hidden">
                 <p>“We tried renting out our place on Airbnb before with the help of our maid, but it turned out to be too much of a hassle. GuestReady’s Singapore team has been helpful throughout every step, and the income we generated covers a big part of our monthly rent.”
 </p>
                 <h5>Lucas and Christine</h5>
-                <a href="/en-sg/homes/#home2">River Valley</a>
+                <a href="#">River Valley</a>
               </div>
               <div data-card-id="2" class="card-desc hidden">
                 <p>“GuestReady took care of absolutely everything. From the moment I first reached out, they have been very helpful and effective with everything from taking pictures to communicating with guests. I would highly recommend them!”
 </p>
                 <h5>Jenny Zhang</h5>
-                <a href="/en-sg/homes/#home3">River Valley</a>
+                <a href="#">River Valley</a>
               </div>
             </div>
           </div>
@@ -380,7 +379,7 @@
       </div>
 
         <div class="container text-center">
-          <a class="btn btn-primary" href="/en-sg/homes/">{{ __('welcome.vietnam_home') }}</a>
+          <a class="btn btn-primary" href="/">{{ __('welcome.vietnam_home') }}</a>
         </div>
 
 
@@ -419,7 +418,7 @@
           </a>
           <div class="answ answ-opened" data-faq="faq3"><p>{{ __('welcome.a2') }}.</p>
 </div>
-          <a class="external-link" href="/en-sg/faq/">
+          <a class="external-link" href="#">
             <img src="{{ url('assets/v2/qs-dbe8653072f6d8640bf90286718a9c0b4170755e560e8fc466b945bf6a61c12e.png')}}" alt="Qs" />
             <span>{{ __('welcome.q4') }}</span>
 </a>        </div>

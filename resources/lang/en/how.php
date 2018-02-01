@@ -34,5 +34,6 @@ return [
     'check_in' => 'Check-in and key exchange',
     'linen_toiletries' => 'Premium linen and toiletries',
     'clearning' => 'Cleaning and laundry',
-    'maintenance' => 'Professional maintenance'
+    'maintenance' => 'Professional maintenance',
+    'title' => "We take care of everything"
 ];
